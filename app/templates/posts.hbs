@@ -1,8 +1,11 @@
-<ul>
+<main>
   {{#each model as |post|}}
-    <li>
-      {{post.title}}
-    </li>
+    <article>
+      <h1 class="title">
+        <span class="glyphicon glyphicon-asterisk"></span> {{post.title}}
+      </h1>
+      <p>{{post.htmlBody}}</p>
+    </article>
   {{/each}}
-</ul>
+</main>
 {{outlet}}
