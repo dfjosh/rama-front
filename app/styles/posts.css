@@ -6,3 +6,9 @@
 .title span {
   vertical-align: bottom;
 }
+.title a {
+  color: #333;
+}
+.title a:hover {
+  color: #666;
+}

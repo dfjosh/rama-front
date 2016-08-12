@@ -1,6 +1,9 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
+  comments: DS.hasMany('comment', { async: true }),
+
   title: DS.attr(),
   author: DS.attr(),
   body: DS.attr(),

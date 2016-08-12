@@ -1,0 +1,16 @@
+<main>
+  <article>
+    <h1 class="title">
+      <span class="glyphicon glyphicon-asterisk"></span> {{model.title}}
+    </h1>
+    <p>{{model.htmlBody}}</p>
+    <p>&mdash;
+      by <em><strong>{{model.author}}</strong></em>
+      at <em><strong>{{moment-format model.createdAt 'h:m a'}}</strong></em>
+      on <em><strong>{{moment-format model.createdAt 'MMMM D, YYYY'}}</strong></em>
+    </p>
+  </article>
+  <div>
+    {{outlet}}
+  </div>
+</main>

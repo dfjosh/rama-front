@@ -2,10 +2,18 @@
   {{#each model as |post|}}
     <article>
       <h1 class="title">
-        <span class="glyphicon glyphicon-asterisk"></span> {{post.title}}
+        {{#link-to 'post' post}}
+          <span class="glyphicon glyphicon-asterisk"></span>
+          {{post.title}}
+        {{/link-to}}
       </h1>
       <p>{{post.htmlBody}}</p>
+      <p>&mdash;
+        by <em><strong>{{post.author}}</strong></em>
+        at <em><strong>{{moment-format post.createdAt 'h:m a'}}</strong></em>
+        on <em><strong>{{moment-format post.createdAt 'MMMM D, YYYY'}}</strong></em>
+      </p>
     </article>
+    <hr />
   {{/each}}
 </main>
-{{outlet}}
