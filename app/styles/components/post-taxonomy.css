@@ -1,0 +1,17 @@
+.post-taxonomy ul {
+  text-align: right;
+}
+.post-taxonomy li {
+  margin-bottom: 2px;
+}
+
+@media (max-width: 768px) {
+  .post-taxonomy ul {
+    text-align: left;
+    display: inline-block;
+  }
+  .post-taxonomy li {
+    margin-bottom: auto;
+    display: inline-block;
+  }
+}

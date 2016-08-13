@@ -1,0 +1,18 @@
+<ul class="list-unstyled">
+  {{#each model.categories as |category|}}
+    <li>
+      <button type="button" class="btn btn-xs btn-success">
+        {{category.name}}
+      </button>
+    </li>
+  {{/each}}
+</ul>
+<ul class="list-unstyled">
+  {{#each model.tags as |tag|}}
+    <li>
+      <button type="button" class="btn btn-xs btn-info">
+        {{tag.name}}
+      </button>
+    </li>
+  {{/each}}
+</ul>

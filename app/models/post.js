@@ -3,6 +3,8 @@ import Ember from 'ember';
 
 export default DS.Model.extend({
   comments: DS.hasMany('comment', { async: true }),
+  categories: DS.hasMany('category', { async: true }),
+  tags: DS.hasMany('tag', { async: true }),
 
   title: DS.attr(),
   author: DS.attr(),

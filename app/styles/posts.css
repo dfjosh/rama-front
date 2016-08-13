@@ -1,14 +1,14 @@
-.title {
+article .title h1 {
   font-size: 56px;
   font-weight: 900;
   letter-spacing: -3.5px;
 }
-.title span {
+article .title h1 span {
   vertical-align: bottom;
 }
-.title a {
+article .title h1 a {
   color: #333;
 }
-.title a:hover {
+article .title h1 a:hover {
   color: #666;
 }
