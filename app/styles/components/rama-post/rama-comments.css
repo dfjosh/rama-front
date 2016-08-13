@@ -1,0 +1,10 @@
+.rama-comments li {
+  margin-bottom: 18px;
+}
+.rama-comments li p {
+  margin: 0px;
+}
+.rama-comments li p.bg-disabled {
+  padding: 15px;
+  border-radius: 3px;
+}

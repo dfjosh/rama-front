@@ -1,4 +1,5 @@
+@import "application.css";
 @import "posts.css";
 
-@import "components/post-comments.css";
-@import "components/post-taxonomy.css";
+@import "components/rama-post/rama-comments.css";
+@import "components/rama-post/rama-taxonomy.css";

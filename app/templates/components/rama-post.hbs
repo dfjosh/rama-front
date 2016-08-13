@@ -1,0 +1,31 @@
+<article class="row">
+  <div class="col-sm-12">
+
+    <div class="row title">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <h1>
+          {{#link-to 'post' post}}
+            <span class="glyphicon glyphicon-asterisk"></span>
+            {{post.title}}
+          {{/link-to}}
+        </h1>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+    <div class="row content">
+      <div class="col-sm-2" style="padding-right: 0px;">
+        {{rama-post/rama-taxonomy post=post}}
+      </div>
+      <div class="col-sm-8">
+        <p>{{post.htmlBody}}</p>
+        <p>&mdash; by {{rama-attribution post=post}}
+        </p>
+        <hr />
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+
+  </div>
+</article>

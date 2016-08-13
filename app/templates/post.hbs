@@ -1,16 +1,4 @@
-<main>
-  <article>
-    <h1 class="title">
-      <span class="glyphicon glyphicon-asterisk"></span> {{model.title}}
-    </h1>
-    <p>{{model.htmlBody}}</p>
-    <p>&mdash;
-      by <em><strong>{{model.author}}</strong></em>
-      at <em><strong>{{moment-format model.createdAt 'h:m a'}}</strong></em>
-      on <em><strong>{{moment-format model.createdAt 'MMMM D, YYYY'}}</strong></em>
-    </p>
-  </article>
-  <div>
-    {{post-comments model=model}}
-  </div>
-</main>
+<div class="container-fluid">
+  {{rama-post post=model}}
+  {{rama-post/rama-comments post=model}}
+</div>
