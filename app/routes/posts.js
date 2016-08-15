@@ -1,8 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model: function() {
-    return this.store.findAll('post');
+  queryParams: {
+    page: {
+      refreshModel: true
+    }
+  },
+
+  model: function(params) {
+    // return this.store.findAll('post');
 
     // Add .query() if you want to add params to your request
 
@@ -18,9 +24,16 @@ export default Ember.Route.extend({
 
     // return this.get('store').query('post', {
     //   page: {
-    //     number: 2,
-    //     size: 3
+    //     number: 1
     //   }
     // });
-  }
+
+    return this.get('store').query('post', {
+      page: {
+        number: params.page
+      }
+    });
+
+  },
+
 });

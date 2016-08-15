@@ -4,6 +4,9 @@
 .rama-taxonomy li {
   margin-bottom: 2px;
 }
+.rama-taxonomy button {
+  border: none;
+}
 
 @media (max-width: 768px) {
   .rama-taxonomy ul {
