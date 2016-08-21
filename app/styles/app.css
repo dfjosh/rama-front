@@ -1,5 +1,7 @@
 @import "application.css";
 @import "posts.css";
 
+@import "components/rama-nav.css";
+
 @import "components/rama-post/rama-comments.css";
 @import "components/rama-post/rama-taxonomy.css";
