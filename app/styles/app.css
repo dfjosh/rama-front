@@ -3,5 +3,7 @@
 
 @import "components/rama-nav.css";
 
-@import "components/rama-post/rama-comments.css";
-@import "components/rama-post/rama-taxonomy.css";
+@import "components/posts/rama-new.css";
+
+@import "components/post/rama-comments.css";
+@import "components/post/rama-taxonomy.css";
