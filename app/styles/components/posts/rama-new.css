@@ -7,3 +7,6 @@
 .rama-new button {
   border: none;
 }
+.rama-new .content .taxonomy {
+  padding-right: 0px;
+}
