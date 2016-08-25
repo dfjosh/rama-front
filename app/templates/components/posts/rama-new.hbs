@@ -19,13 +19,30 @@
             <li>
               <div class="dropdown">
                 <button id="categroyButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-info">
-                  Add a Category
+                  Add Categories
                   <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu">
-                  <li>dog</li>
-                  <li>cat</li>
-                  <li>mouse</li>
+                <ul class="dropdown-menu pull-right">
+                  {{#each categories as |category|}}
+                    <li>
+                      <a href="#">{{category.name}}</a>
+                    </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </li>
+            <li>
+              <div class="dropdown">
+                <button id="tagButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-success">
+                  Add Tags
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                  {{#each tags as |tag|}}
+                    <li>
+                      <a href="#">{{tag.name}}</a>
+                    </li>
+                  {{/each}}
                 </ul>
               </div>
             </li>
