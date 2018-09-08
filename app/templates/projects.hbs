@@ -1,9 +1,9 @@
 <div class="container-fluid">
-
+  
   {{#each model as |post|}}
     {{rama-post post=post}}
   {{/each}}
-
-  {{rama-pagination store=store page=page}} {{!-- why don't I need to pass the model here? --}}
+  
+  {{rama-pagination store=store page=page}}
 
 </div>
