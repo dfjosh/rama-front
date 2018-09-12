@@ -6,6 +6,6 @@ export default Ember.Route.extend({
   // Route Actions: actions: { willTransition(), didTransition() }
 
   beforeModel: function() {
-    this.transitionTo('posts');
+    this.transitionTo('projects');
   }
 });

@@ -4,3 +4,13 @@
 .inline {
   display: inline;
 }
+
+header {
+  background-color: #3e3e3e;
+}
+header a {
+  display: block;
+}
+header a img {
+  width: 100%;
+}

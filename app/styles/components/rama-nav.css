@@ -1,6 +1,7 @@
 .rama-nav nav.navbar {
   min-height: 28px;
   border-radius: 0px;
+  margin-bottom: 0px;
 }
 .rama-nav #new-post {
   margin: 3px 5px;
