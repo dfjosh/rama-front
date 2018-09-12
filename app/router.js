@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('posts.new', { path: 'posts/new' }); // I can't nest it because my template can't be nested because I don't want to render it inside the posts template! :(
   this.route('post', { path: 'posts/:post_id' });
   this.route('projects');
+  this.route('about');
 });
 
 export default Router;
