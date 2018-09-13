@@ -1,3 +1,9 @@
 .rama-post .content .taxonomy {
   padding-right: 0px;
 }
+.rama-post .feature-image a {
+  display: block;
+}
+.rama-post .feature-image img {
+  width: 100%;
+}

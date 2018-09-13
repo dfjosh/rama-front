@@ -9,6 +9,8 @@ export default DS.Model.extend({
   title: DS.attr(),
   author: DS.attr(),
   body: DS.attr(),
+  featureImage: DS.attr(),
+  featureLink: DS.attr(),
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
 
