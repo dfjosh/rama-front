@@ -1,8 +1,8 @@
-.rama-nav nav.navbar {
+.rama-admin-toolbar nav.navbar {
   min-height: 28px;
   border-radius: 0px;
   margin-bottom: 0px;
 }
-.rama-nav #new-post {
+.rama-admin-toolbar #new-post {
   margin: 3px 5px;
 }

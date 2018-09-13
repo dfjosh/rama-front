@@ -6,23 +6,40 @@
       <div class="col-sm-8">
         <h1>
           {{#link-to 'post' post}}
-            <span class="glyphicon glyphicon-asterisk"></span>
+            {{#if showAsterisk}}
+              <span class="glyphicon glyphicon-asterisk"></span>
+            {{/if}}
             {{post.title}}
           {{/link-to}}
         </h1>
       </div>
       <div class="col-sm-2"></div>
     </div>
+    
+    {{#if showPostImage}}
+      <div class="row post-image">
+        <div class="col-sm-12">
+          {{#link-to}}
+            <img src="">
+          {{/link-to}}
+        </div>
+      </div>
+    {{/if}}
 
     <div class="row content">
       <div class="col-sm-2 taxonomy">
-        {{post/rama-taxonomy post=post}}
+        {{#if showTaxonomy}}
+          {{post/rama-taxonomy post=post}}
+        {{/if}}
       </div>
       <div class="col-sm-8">
         <p>{{post.htmlBody}}</p>
-        <p>&mdash; by {{rama-attribution post=post}}
-        </p>
-        <hr />
+        {{#if showAttribution}}
+          <p>&mdash; by {{rama-attribution post=post}}</p>
+        {{/if}}
+        {{#if showHorizontalRule}}
+          <hr />
+        {{/if}}
       </div>
       <div class="col-sm-2"></div>
     </div>

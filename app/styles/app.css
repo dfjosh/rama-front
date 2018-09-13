@@ -1,7 +1,8 @@
 @import "application.css";
 @import "posts.css";
 
-@import "components/rama-nav.css";
+@import "components/rama-admin-toolbar.css";
+@import "components/rama-pagination.css";
 @import "components/rama-post.css";
 
 @import "components/posts/rama-new.css";

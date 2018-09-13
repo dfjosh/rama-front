@@ -1,7 +1,14 @@
 <div class="container-fluid">
   
   {{#each model as |post|}}
-    {{rama-post post=post}}
+    {{rama-post
+      post=post
+      showAsterisk=false
+      showPostImage=true
+      showTaxonomy=false
+      showAttribution=false
+      showHorizontalRule=false
+    }}
   {{/each}}
   
   {{rama-pagination store=store page=page}}

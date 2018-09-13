@@ -10,55 +10,57 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-header {
+/* header */
+body > div > header {
   background-color: #3e3e3e;
   position: relative;
 }
-header a {
+body > div > header a {
   display: block;
 }
-header a div.title {
+body > div > header a div.title {
   position: absolute;
   top: 0px;
   left: 0px;
 }
-header h1 {
+body > div > header h1 {
   font-size: 48px;
   font-weight: 700;
   margin-left: 32px;
 }
-header h2 {
+body > div > header h2 {
   font-size: 24px;
   font-weight: 700;
   margin-left: 32px;
   margin-top: 15px;
 }
-header a:link, header a:visited, header a:hover, header a:active {
+body > div > header a:link, header a:visited, header a:hover, header a:active {
   color: #565656;
 }
-header a img {
+body > div > header a img {
   width: 100%;
   padding: 12px;
 }
 
-nav {
+/* navigation */
+body > div > nav.navigation {
   background-color: #3e3e3e;
 }
-nav ul {
+body > div > nav.navigation ul {
   width: 270px;
   margin: 0px auto;
   padding: 0px;
   list-style: none;
   font-size: 0px; /* to remove the carriage return whitespaces from between the nested inline-block li elements */
 }
-nav ul li {
+body > div > nav.navigation ul li {
   display: inline-block;
   width: 87px; /* not sure why 33.3333% doesn't work */
 }
-nav ul li:hover {
+body > div > nav.navigation ul li:hover {
   background-color: #7e7e7e;
 }
-nav ul li a {
+body > div > nav.navigation ul li a {
   display: block;
   padding: 8px 12px;
   color: #e8e8e8;
@@ -67,10 +69,13 @@ nav ul li a {
   font-style: italic;
   font-weight: 900;
 }
-nav ul li a:link, nav ul li a:visited, nav ul li a:hover, nav ul li a:active {
+body > div > nav.navigation ul li a:link, 
+body > div > nav.navigation ul li a:visited, 
+body > div > nav.navigation ul li a:hover, 
+body > div > nav.navigation ul li a:active {
   text-decoration: none;
   color: #e8e8e8
 }
-nav ul li a.active {
+body > div > nav.navigation ul li a.active {
   background-color: #5b5a5a;
 }
