@@ -2,8 +2,8 @@
   <div class="col-sm-12">
 
     <div class="row title">
-      <div class="col-sm-2"></div>
-      <div class="col-sm-8">
+      <div class="col-sm-{{gutterColumns}}"></div>
+      <div class="col-sm-{{contentColumns}}">
         <h1>
           {{#if post.featureLink}}
             <a href="">
@@ -22,7 +22,7 @@
           {{/if}}
         </h1>
       </div>
-      <div class="col-sm-2"></div>
+      <div class="col-sm-{{gutterColumns}}"></div>
     </div>
     
     {{#if showFeatureImage}}
@@ -34,21 +34,19 @@
     {{/if}}
 
     <div class="row content">
-      <div class="col-sm-2 taxonomy">
+      <div class="col-sm-{{gutterColumns}} taxonomy">
         {{#if showTaxonomy}}
           {{post/rama-taxonomy post=post}}
         {{/if}}
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-{{contentColumns}}">
         <p>{{post.htmlBody}}</p>
         {{#if showAttribution}}
           <p>&mdash; by {{rama-attribution post=post}}</p>
         {{/if}}
-        {{#if showHorizontalRule}}
-          <hr />
-        {{/if}}
+        <hr class="{{if showHorizontalRule '' 'invisible'}}"/>
       </div>
-      <div class="col-sm-2"></div>
+      <div class="col-sm-{{gutterColumns}}"></div>
     </div>
 
   </div>

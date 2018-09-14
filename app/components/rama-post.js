@@ -10,5 +10,10 @@ export default Ember.Component.extend({
   showFeatureImage: true,
   showTaxonomy: true,
   showAttribution: true,
-  showHorizontalRule: true
+  showHorizontalRule: true,
+  gutterColumns: 2,
+  
+  contentColumns: Ember.computed('gutterColumns', function() {
+    return 12 - this.get('gutterColumns') * 2;
+  })
 });

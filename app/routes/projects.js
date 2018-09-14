@@ -13,7 +13,7 @@ export default Ember.Route.extend({
         name: 'Projects'
       }
     }).then(categories => {
-      let categoryIds = categories.map(c => { return c.id });
+      let categoryIds = categories.map(c => { return c.id; });
       return this.get('store').query('post', {
         filter: {
           categories: categoryIds

@@ -7,16 +7,21 @@
 
 body {
   font-family: Helvetica, sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
 /* header */
 body > div > header {
   background-color: #3e3e3e;
-  position: relative;
 }
 body > div > header a {
   display: block;
+}
+body > div > header a div {
+  max-width: 1080px;
+  margin: 0px auto;
+  position: relative;
 }
 body > div > header a div.title {
   position: absolute;
@@ -34,7 +39,10 @@ body > div > header h2 {
   margin-left: 32px;
   margin-top: 15px;
 }
-body > div > header a:link, header a:visited, header a:hover, header a:active {
+body > div > header a:link, 
+body > div > header a:visited, 
+body > div > header a:hover, 
+body > div > header a:active {
   color: #565656;
 }
 body > div > header a img {

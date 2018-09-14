@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<main class="container-fluid">
   
   {{#each model as |post|}}
     {{rama-post
@@ -8,9 +8,10 @@
       showTaxonomy=false
       showAttribution=false
       showHorizontalRule=false
+      gutterColumns=1
     }}
   {{/each}}
   
   {{rama-pagination store=store page=page}}
 
-</div>
+</main>
