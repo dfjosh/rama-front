@@ -8,6 +8,10 @@
   height: 250px;
   margin-bottom: 12px;
 }
+.rama-post article h1 {
+  /* padding-left: 60px;
+  text-indent: -32px; */
+}
 .rama-post hr.invisible {
   margin: 30px 0px;
 }

@@ -7,13 +7,13 @@ export default Ember.Route.extend({
     }
   },
 
-  model: function(params) {
-    return this.get('store').query('post', {
-      page: {
-        number: params.page
-      }
-    });
-  },
+  // model: function(params) {
+  //   return this.get('store').query('post', {
+  //     page: {
+  //       number: params.page
+  //     }
+  //   });
+  // },
   
   model: function(params) {
     return this.get('store').query('category', {
@@ -25,6 +25,9 @@ export default Ember.Route.extend({
       return this.get('store').query('post', {
         filter: {
           '!categories': categoryIds
+        },
+        page: {
+          number: params.page
         }
       });
     });

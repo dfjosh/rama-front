@@ -15,10 +15,10 @@
 <nav class="navigation">
   <ul>
     <li>
-      {{link-to "Projects" "projects"}}
+      {{link-to "Projects" "projects" (query-params page=1) current-when="projects"}}
     </li>
     <li>
-      {{link-to "Posts" "posts"}}
+      {{link-to "Posts" "posts" (query-params page=1) current-when="posts"}}
     </li>
     <li>
       {{link-to "About" "about"}}
