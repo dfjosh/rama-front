@@ -1,9 +1,15 @@
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
+<<<<<<< HEAD
+  var ENV = {
     modulePrefix: 'rama-front',
+    environment: environment,
+=======
+  let ENV = {
+    modulePrefix: 'my-app',
     environment,
+>>>>>>> 70712f8... message
     rootURL: '/',
     locationType: 'auto',
     apiURL: 'http://localhost:3000',
