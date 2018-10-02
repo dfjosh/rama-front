@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import ENV from '../config/environment';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['rama-post'],
   
   ENV: ENV,
@@ -13,7 +14,7 @@ export default Ember.Component.extend({
   showHorizontalRule: true,
   gutterColumns: 2,
   
-  contentColumns: Ember.computed('gutterColumns', function() {
-    return 12 - this.get('gutterColumns') * 2;
+  contentColumns: computed('gutterColumns', function() {
+    return 12 - this.gutterColumns * 2;
   })
 });

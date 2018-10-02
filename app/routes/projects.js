@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   queryParams: {
     page: {
       refreshModel: true
@@ -8,13 +8,13 @@ export default Ember.Route.extend({
   },
 
   model(params) {
-    return this.get('store').query('category', {
+    return this.store.query('category', {
       filter: {
         name: 'Projects'
       }
     }).then(categories => {
       let categoryIds = categories.map(c => { return c.id; });
-      return this.get('store').query('post', {
+      return this.store.query('post', {
         filter: {
           categories: categoryIds
         }

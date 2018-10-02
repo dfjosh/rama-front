@@ -1,21 +1,22 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({  
+export default Component.extend({  
   page: null,
 
-  prevPage: Ember.computed('page', function() {
-    return this.get('page') - 1;
+  prevPage: computed('page', function() {
+    return this.page - 1;
   }),
 
-  nextPage: Ember.computed('page', function() {
-    return this.get('page') + 1;
+  nextPage: computed('page', function() {
+    return this.page + 1;
   }),
 
-  isFirstPage: Ember.computed('page', function() {
-    return this.get('page') === 1;
+  isFirstPage: computed('page', function() {
+    return this.page === 1;
   }),
 
-  isLastPage: Ember.computed('model', function() {
-    return this.get('page') === this.get('model.meta.page-count');
+  isLastPage: computed('model', function() {
+    return this.page === this.get('model.meta.page-count');
   })
 });

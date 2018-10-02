@@ -1,5 +1,6 @@
+import { htmlSafe } from '@ember/template';
+import { computed } from '@ember/object';
 import DS from 'ember-data';
-import Ember from 'ember';
 
 export default DS.Model.extend({
   comments: DS.hasMany('comment', { async: true }),
@@ -14,8 +15,8 @@ export default DS.Model.extend({
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
 
-  htmlBody: Ember.computed('body', function() {
-    var body = this.get('body');
-    return Ember.String.htmlSafe(body);
+  htmlBody: computed('body', function() {
+    var body = this.body;
+    return htmlSafe(body);
   })
 });

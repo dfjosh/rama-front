@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ["rama-new"],
 
   title: null,
@@ -9,8 +9,8 @@ export default Ember.Component.extend({
   actions: {
     publishPost: function() {
       var post = this.store.createRecord('post', {
-        title: this.get('title'),
-        body:  this.get('body')
+        title: this.title,
+        body:  this.body
       });
       post.save().then(post => {
         this.setProperties({
