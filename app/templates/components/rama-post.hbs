@@ -13,7 +13,7 @@
               {{post.title}}
             </a>
           {{else}}
-            {{#link-to 'post' post}}
+            {{#link-to "post" post}}
               {{#if showAsterisk}}
                 <span class="glyphicon glyphicon-asterisk"></span>
               {{/if}}
@@ -27,8 +27,8 @@
     
     {{#if showFeatureImage}}
       <div class="row feature-image">
-        <a href="{{post.featureLink}}">
-          <img src="{{concat ENV.apiURL post.featureImage}}">
+        <a href={{post.featureLink}}>
+          <img src={{concat ENV.apiURL post.featureImage}}>
         </a>
       </div>
     {{/if}}
@@ -44,7 +44,7 @@
         {{#if showAttribution}}
           <p>&mdash; by {{rama-attribution post=post}}</p>
         {{/if}}
-        <hr class="{{if showHorizontalRule '' 'invisible'}}"/>
+        <hr class={{if showHorizontalRule "" "invisible"}}>
       </div>
       <div class="col-sm-{{gutterColumns}}"></div>
     </div>

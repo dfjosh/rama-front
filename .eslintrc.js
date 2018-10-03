@@ -5,7 +5,8 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    'ember'
+    'ember',
+    'html' // for in-line scripts only
   ],
   extends: [
     'eslint:recommended',

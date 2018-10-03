@@ -5,7 +5,7 @@
       <div class="col-sm-2"></div>
       <div class="col-sm-8">
         <h1>
-          {{#link-to 'post' post}}
+          {{#link-to "post" post}}
             <span class="glyphicon glyphicon-asterisk"></span>
             {{post.title}}
           {{/link-to}}
@@ -20,9 +20,8 @@
       </div>
       <div class="col-sm-8">
         <p>{{post.htmlBody}}</p>
-        <p>&mdash; by {{rama-attribution post=post}}
-        </p>
-        <hr />
+        <p>&mdash; by {{rama-attribution post=post}}</p>
+        <hr>
       </div>
       <div class="col-sm-2"></div>
     </div>

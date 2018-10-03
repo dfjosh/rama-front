@@ -2,11 +2,11 @@
   <div class="col-sm-2"></div>
   <nav class="col-sm-8">
     <ul class="pager">
-      <li class="previous {{if isFirstPage 'hidden' ''}}">
-        {{#link-to 'posts' (query-params page=prevPage)}}<span>&larr;</span> Newer{{/link-to}}
+      <li class="previous {{if isFirstPage "hidden" ""}}">
+        {{#link-to "posts" (query-params page=prevPage)}}<span>&larr;</span> Newer{{/link-to}}
       </li>
-      <li class="next {{if isLastPage 'hidden' ''}}">
-        {{#link-to 'posts' (query-params page=nextPage)}}Older <span>&rarr;</span>{{/link-to}}
+      <li class="next {{if isLastPage "hidden" ""}}">
+        {{#link-to "posts" (query-params page=nextPage)}}Older <span>&rarr;</span>{{/link-to}}
       </li>
     </ul>
   </nav>

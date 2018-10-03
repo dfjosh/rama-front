@@ -12,7 +12,7 @@ export default Component.extend({
         title: this.title,
         body:  this.body
       });
-      post.save().then(post => {
+      post.save().then(() => {
         this.setProperties({
           title: null,
           body: null
