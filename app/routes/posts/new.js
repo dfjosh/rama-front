@@ -1,11 +1,15 @@
 import Route from '@ember/routing/route';
-import RSVP from 'rsvp';
+import EmberObject from '@ember/object';
 
 export default Route.extend({
   model() {
-    return RSVP.hash({
-      categories: this.store.findAll('category'),
-      tags:       this.store.findAll('tag')
+    return this.store.findAll('category').then(categories => { // don't do this. maybe this should be computed on the controller and the model should be an EmberObject.create?
+      return this.store.findAll('tag').then(tags => {
+        return EmberObject.create({
+          categories: categories,
+          tags: tags
+        });
+      });
     });
   }
 });

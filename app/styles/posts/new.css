@@ -1,12 +1,12 @@
-.rama-new ul {
+.posts_new ul {
   text-align: right;
 }
-.rama-new li {
+.posts_new li {
   margin-bottom: 2px;
 }
-.rama-new button {
+.posts_new button {
   border: none;
 }
-.rama-new .content .taxonomy {
+.posts_new .content .taxonomy {
   padding-right: 0px;
 }

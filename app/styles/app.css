@@ -1,13 +1,15 @@
 @import "application.css";
+
 @import "projects.css";
+
 @import "posts.css";
+@import "posts/new.css";
+
 @import "about.css";
 
 @import "components/rama-admin-toolbar.css";
 @import "components/rama-pagination.css";
 @import "components/rama-post.css";
-
-@import "components/posts/rama-new.css";
 
 @import "components/post/rama-comments.css";
 @import "components/post/rama-taxonomy.css";
