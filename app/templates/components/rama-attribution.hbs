@@ -1,4 +1,4 @@
 <em><strong>{{if post.author post.author "Unknown"}}</strong></em>
-at <em><strong>{{moment-format post.createdAt "h:mm a"}}</strong></em>
-on <em><strong>{{moment-format post.createdAt "MMMM D, YYYY"}}</strong></em>
+at <em><strong>{{formatted-date post.createdAt "h:mm a"}}</strong></em>
+on <em><strong>{{formatted-date post.createdAt "MMMM D, YYYY"}}</strong></em>
 {{!-- TODO add an edit button --}}

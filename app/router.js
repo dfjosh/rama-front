@@ -14,6 +14,10 @@ Router.map(function() {
   this.route('post', { path: 'posts/:post_id' });
   this.route('projects');
   this.route('about');
+  this.route('admin', function() {
+    this.route('tags');
+    this.route('posts');
+  });
 });
 
 export default Router;

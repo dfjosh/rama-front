@@ -1,4 +1,4 @@
-{{#if post.categories.length}}
+{{#if post.categories}}
   <ul class="list-unstyled">
     {{#each post.categories as |category|}}
       <li>
@@ -9,7 +9,7 @@
     {{/each}}
   </ul>
 {{/if}}
-{{#if post.categories.length}}
+{{#if post.tags}}
   <ul class="list-unstyled">
     {{#each post.tags as |tag|}}
       <li>
