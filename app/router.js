@@ -15,7 +15,9 @@ Router.map(function() {
   this.route('projects');
   this.route('about');
   this.route('admin', function() {
-    this.route('tags');
+    this.route('tags', function() {
+      this.route('new');
+    });
     this.route('posts');
   });
 });
