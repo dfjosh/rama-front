@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row tags-toolbar">
   <div class="col-sm-12">
     {{link-to "New Tag" "admin.tags.new" class="btn btn-primary pull-right"}}
   </div>
@@ -10,25 +10,24 @@
       <th>name</th>
       <th>created</th>
       <th>updated</th>
-      <th></th>
+      <th>edit</th>
     </tr>
   </thead>
-  {{#each model as |tag|}}
-    <tr>
-      <td>{{tag.id}}</td>
-      <td>{{tag.name}}</td>
-      <td>{{formatted-date tag.createdAt}}</td>
-      <td>{{formatted-date tag.updatedAt}}</td>
-      <td>
-        {{#link-to "admin.tags.edit" tag}}
-          <span class="glyphicon glyphicon-pencil"></span>
-        {{/link-to}}
-        <span class="glyphicon glyphicon-remove">
-          <a href="#" {{action "deleteTag" tag}}></a>
-        </span>
-      </td>
-    </tr>
-  {{/each}}
+  <tbody>
+    {{#each model as |tag|}}
+      <tr>
+        <td>{{tag.id}}</td>
+        <td>{{tag.name}}</td>
+        <td>{{formatted-date tag.createdAt}}</td>
+        <td>{{formatted-date tag.updatedAt}}</td>
+        <td>
+          {{#link-to "admin.tags.edit" tag}}
+            <span class="glyphicon glyphicon-pencil"></span>
+          {{/link-to}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
 </table>
 
 {{outlet}}

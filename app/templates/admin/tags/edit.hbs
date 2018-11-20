@@ -6,12 +6,12 @@
   <div class="modal-body">
     <div class="form-group">
       <label for="nameInput">Name</label>
-      {{input type="text" class="form-control" id="nameInput" value=model.name}}
+      {{input type="text" class="form-control" id="nameInput" value=proxy.name}}
     </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" {{action "deleteTag" model}}>Delete</button>
     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="button" class="btn btn-primary" data-dismiss="modal" {{action "editTag" model}}>Save Changes</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal" {{action "editTag" proxy}}>Save Changes</button>
   </div>
 {{/bootstrap-modal}}
