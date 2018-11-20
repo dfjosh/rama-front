@@ -11,12 +11,6 @@ export default Controller.extend({
         this.set('name', ''); // this doesn't work on the route!
         this.transitionToRoute('admin.tags'); 
       });
-    },
-    editTag(tag) {
-      
-    },
-    deleteTag(tag) {
-      
     }
   }
 });

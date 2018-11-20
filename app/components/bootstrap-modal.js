@@ -1,12 +1,14 @@
 import Component from '@ember/component';
-// import { computed } from '@ember/object';
 import $ from 'jquery';
 
 export default Component.extend({
   id: null,
+  in: false,
   
   didInsertElement() {
-    $('.modal').modal('show');
+    if (this.in === true) {
+      $('.modal').modal('show');
+    }
     $('.modal').on('hide.bs.modal', function() {
       history.back();
     });

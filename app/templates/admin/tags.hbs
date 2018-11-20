@@ -20,9 +20,9 @@
       <td>{{formatted-date tag.createdAt}}</td>
       <td>{{formatted-date tag.updatedAt}}</td>
       <td>
-        <span class="glyphicon glyphicon-pencil">
-          <a href="#" {{action "editTag" tag}}></a>
-        </span>
+        {{#link-to "admin.tags.edit" tag}}
+          <span class="glyphicon glyphicon-pencil"></span>
+        {{/link-to}}
         <span class="glyphicon glyphicon-remove">
           <a href="#" {{action "deleteTag" tag}}></a>
         </span>
