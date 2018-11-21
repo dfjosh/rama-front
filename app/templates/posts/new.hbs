@@ -23,7 +23,7 @@
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu pull-right">
-                  {{#each categories as |category|}}
+                  {{#each model.categories as |category|}}
                     <li>
                       <a href="#" {{action "addCategory" category}}>{{category.name}}</a>
                     </li>

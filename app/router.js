@@ -17,7 +17,7 @@ Router.map(function() {
   this.route('admin', function() {
     this.route('tags', function() {
       this.route('new');
-      this.route('edit', {path: 'tags/:tag_id'});
+      this.route('edit', {path: ':tag_id'});
     });
     this.route('posts');
   });

@@ -6,19 +6,25 @@ export default Route.extend({
       refreshModel: true
     }
   },
-
-  model() {     // params
-    return this.store.query('category', {
-      filter: {
-        name: 'Projects'
-      }
-    }).then(categories => {
-      let categoryIds = categories.map(c => { return c.id; });
-      return this.store.query('post', {
-        filter: {
-          categories: categoryIds
-        }
-      });
+  
+  model() {
+    return this.store.query('post', {
+      categories: ["Projects"]
     });
   }
+
+  // model() {     // params
+  //   return this.store.query('category', {
+  //     filter: {
+  //       name: 'Projects'
+  //     }
+  //   }).then(categories => {
+  //     let categoryIds = categories.map(c => { return c.id; });
+  //     return this.store.query('post', {
+  //       filter: {
+  //         categories: categoryIds
+  //       }
+  //     });
+  //   });
+  // }
 });
