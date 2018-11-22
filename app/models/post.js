@@ -1,19 +1,23 @@
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
+import { hasMany } from 'ember-data/relationships';
 import { htmlSafe } from '@ember/template';
 import { computed } from '@ember/object';
-import DS from 'ember-data';
+// import DS from 'ember-data';
 
-export default DS.Model.extend({
-  comments: DS.hasMany('comment', { async: true }),
-  categories: DS.hasMany('category', { async: true }),
-  tags: DS.hasMany('tag', { async: true }),
+export default Model.extend({
+  comments: hasMany('comment', { async: true }),
+  categories: hasMany('category', { async: true }),
+  postCategories: hasMany('post-category', {async: true}),
+  tags: hasMany('tag', { async: true }),
 
-  title: DS.attr(),
-  author: DS.attr(),
-  body: DS.attr(),
-  featureImage: DS.attr(),
-  featureLink: DS.attr(),
-  createdAt: DS.attr('date'),
-  updatedAt: DS.attr('date'),
+  title: attr(),
+  author: attr(),
+  body: attr(),
+  featureImage: attr(),
+  featureLink: attr(),
+  createdAt: attr('date'),
+  updatedAt: attr('date'),
 
   htmlBody: computed('body', function() {
     var body = this.body;

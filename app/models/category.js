@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  post: DS.belongsTo('post', { async: true }),
+  posts: DS.hasMany('post', { async: true }),
+  postCategories: DS.hasMany('post-category', {aysnc: true}),
 
   name: DS.attr()
 });
