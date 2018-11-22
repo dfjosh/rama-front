@@ -6,10 +6,11 @@ import { computed } from '@ember/object';
 // import DS from 'ember-data';
 
 export default Model.extend({
-  comments: hasMany('comment', { async: true }),
-  categories: hasMany('category', { async: true }),
+  comments: hasMany('comment', {async: true}),
+  categories: hasMany('category', {async: true}),
   postCategories: hasMany('post-category', {async: true}),
-  tags: hasMany('tag', { async: true }),
+  tags: hasMany('tag', {async: true}),
+  postTags: hasMany('post-tag', {async: true}),
 
   title: attr(),
   author: attr(),

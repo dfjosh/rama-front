@@ -18,7 +18,7 @@
           <ul class="list-unstyled">
             <li>
               <div class="dropdown">
-                <button id="categroyButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-info">
+                <button id="categroyButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-success">
                   Add Categories
                   <span class="caret"></span>
                 </button>
@@ -42,18 +42,27 @@
             </li>
             <li>
               <div class="dropdown">
-                <button id="tagButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-success">
+                <button id="tagButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-info">
                   Add Tags
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu pull-right">
-                  {{#each model.tags as |tag|}}
+                  {{#each tags as |tag|}}
                     <li>
-                      <a href="#">{{tag.name}}</a>
+                      <a href="#" {{action "addTag" tag}}>{{tag.name}}</a>
                     </li>
                   {{/each}}
                 </ul>
               </div>
+              <ul class="list-unstyled">
+                {{#each model.postTags as |postTag|}}
+                  <li>
+                    <button type="button" class="btn btn-xs btn-info">
+                      {{postTag.tag.name}}
+                    </button>
+                  </li>
+                {{/each}}
+              </ul>
             </li>
 
           </ul>
