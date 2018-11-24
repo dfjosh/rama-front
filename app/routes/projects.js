@@ -1,15 +1,19 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-  queryParams: {
-    page: {
-      refreshModel: true
-    }
-  },
+  // queryParams: {
+  //   page: {
+  //     refreshModel: true
+  //   }
+  // },
   
   model() {
     return this.store.query('post', {
-      categories: ["Projects"]
+      filter: {
+        name: "categories.name",
+        op: "=",
+        val: "Projects"
+      }
     });
   }
 
