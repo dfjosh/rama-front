@@ -5,7 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'rama-front',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'router-scroll', // 'auto'
+    historySupportMiddleware: true,
     apiURL: 'http://localhost:3000',
     EmberENV: {
       FEATURES: {
