@@ -33,6 +33,7 @@ export default Controller.extend({
           post.postTags.map(postTag => postTag.save())
         ]);
       }).then(() => {
+        this.model.reload();
         this.transitionToRoute('posts');
       });
     }
