@@ -1,8 +1,9 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-      {{#link-to "posts.new" class="btn btn-success btn-xs"}}New Post{{/link-to}}
+    <div class="btn-group">
+      {{#link-to "posts" class="btn btn-default btn-xs"}}Website{{/link-to}}
       {{#link-to "admin" class="btn btn-default btn-xs"}}Admin{{/link-to}}
     </div>
+    {{#link-to "posts.new" class="btn btn-success btn-xs pull-right"}}New Post{{/link-to}}
   </div>
 </nav>

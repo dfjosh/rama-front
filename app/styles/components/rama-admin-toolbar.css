@@ -3,6 +3,6 @@
   border-radius: 0px;
   margin-bottom: 0px;
 }
-.rama-admin-toolbar #new-post {
-  margin: 3px 5px;
+.rama-admin-toolbar .container-fluid {
+  margin: 4px 5px 3px 5px;
 }

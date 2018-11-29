@@ -1,0 +1,36 @@
+.rama-nav {
+  background-color: #3e3e3e;
+}
+.rama-nav ul {
+  width: 270px;
+  margin: 0px auto;
+  padding: 0px;
+  list-style: none;
+  font-size: 0px; /* to remove the carriage return whitespaces from between the nested inline-block li elements */
+}
+.rama-nav ul li {
+  display: inline-block;
+  width: 87px; /* not sure why 33.3333% doesn't work */
+}
+.rama-nav ul li:hover {
+  background-color: #7e7e7e;
+}
+.rama-nav ul li a {
+  display: block;
+  padding: 8px 12px;
+  color: #e8e8e8;
+  text-align: center;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 900;
+}
+.rama-nav ul li a:link, 
+.rama-nav ul li a:visited, 
+.rama-nav ul li a:hover, 
+.rama-nav ul li a:active {
+  text-decoration: none;
+  color: #e8e8e8
+}
+.rama-nav ul li a.active {
+  background-color: #5b5a5a;
+}

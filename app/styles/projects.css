@@ -1,3 +1,4 @@
 main.container-fluid {
   margin-top: 44px;
+  overflow: hidden;
 }
