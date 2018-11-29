@@ -20,6 +20,10 @@ Router.map(function() {
       this.route('new');
       this.route('edit', {path: ':tag_id'});
     });
+    this.route('categories', function() {
+      this.route('new');
+      this.route('edit', {path: ':category_id'});
+    });
     this.route('posts');
   });
 });
