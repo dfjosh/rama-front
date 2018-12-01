@@ -16,13 +16,11 @@ Router.map(function() {
   this.route('projects');
   this.route('about');
   this.route('admin', function() {
-    this.route('tags', function() {
-      this.route('new');
-      this.route('edit', {path: ':tag_id'});
-    });
-    this.route('categories', function() {
-      this.route('new');
-      this.route('edit', {path: ':category_id'});
+    this.route('taxonomies', function() {
+      this.route('taxonomy', {path: ':taxonomy'}, function() {
+        this.route('new');
+        this.route('edit', {path: ':tag_id'});
+      });
     });
     this.route('posts');
   });

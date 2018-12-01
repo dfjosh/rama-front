@@ -1,6 +1,7 @@
-<div class="row categories-toolbar">
+<div class="row taxonomies-toolbar">
   <div class="col-sm-12">
-    {{link-to "New Category" "admin.categories.new" class="btn btn-primary pull-right"}}
+    {{!-- {{model.modelName}} --}}
+    {{link-to (concat "New " (capitalize modelName)) "admin.taxonomies.taxonomy.new" class="btn btn-primary pull-right"}}
   </div>
 </div>
 <table class="table table-striped table-hover">
@@ -21,7 +22,7 @@
         <td>{{formatted-date category.createdAt}}</td>
         <td>{{formatted-date category.updatedAt}}</td>
         <td>
-          {{#link-to "admin.categories.edit" category}}
+          {{#link-to "admin.taxonomies.taxonomy.edit" taxonomy}}
             <span class="glyphicon glyphicon-pencil"></span>
           {{/link-to}}
         </td>
