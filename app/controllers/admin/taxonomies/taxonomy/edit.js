@@ -9,16 +9,16 @@ export default Controller.extend({
   }),
   
   actions: {
-    editCategory(proxy) {
-      let category = this.model;
-      category.set('name', proxy.name);
-      category.save().then(() => {
-        this.transitionToRoute('admin.categories');
+    editTaxonomy() {
+      let taxonomy = this.model;
+      taxonomy.set('name', this.proxy.name);
+      taxonomy.save().then(() => {
+        this.transitionToRoute('admin.taxonomies.taxonomy');
       });
     },
-    deleteCategory(category) {
-      category.destroyRecord().then(() => {
-        this.transitionToRoute('admin.categories');
+    deleteTaxonomy() {
+      this.model.destroyRecord().then(() => {
+        this.transitionToRoute('admin.taxonomies.taxonomy');
       });
     }
   }

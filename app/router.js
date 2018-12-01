@@ -19,7 +19,7 @@ Router.map(function() {
     this.route('taxonomies', function() {
       this.route('taxonomy', {path: ':taxonomy'}, function() {
         this.route('new');
-        this.route('edit', {path: ':tag_id'});
+        this.route('edit', {path: ':taxonomy_id/edit'});
       });
     });
     this.route('posts');
