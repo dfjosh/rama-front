@@ -36,5 +36,9 @@ export default Component.extend({
       }
       
     });
+  },
+  
+  willDestroy() {
+    $(window).unbind('scroll');
   }
 });
