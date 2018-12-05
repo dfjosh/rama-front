@@ -4,6 +4,8 @@
       {{#link-to "posts" class="btn btn-default btn-xs" current-when="projects posts about"}}DistantFutureJOSH{{/link-to}}
       {{#link-to "admin" class="btn btn-default btn-xs"}}Admin{{/link-to}}
     </div>
-    {{#link-to "posts.new" class="btn btn-success btn-xs pull-right"}}New Post{{/link-to}}
+    <button class="btn btn-success btn-xs pull-right" data-toggle="modal" data-target="#newPostModal">New Post</button>
   </div>
 </nav>
+
+{{new-post-modal}}

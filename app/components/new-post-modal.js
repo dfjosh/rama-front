@@ -1,8 +1,18 @@
-import Controller from '@ember/controller';
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 import RSVP from 'rsvp';
+import $ from 'jquery';
 
-export default Controller.extend({
+export default Component.extend({
+  classNames: ['new-post-modal'],
+  store: service(),
+  router: service(),
+  
+  model: computed(function() {
+    return this.store.createRecord('post');
+  }),
+  
   categories: computed(function() {
     return this.store.findAll('category');
   }),
@@ -34,7 +44,8 @@ export default Controller.extend({
         ]);
       }).then(() => {
         this.model.reload();
-        this.transitionToRoute('posts');
+        this.router.transitionTo('posts', {queryParams: {page: 1}}); // queryParams so that the model reloads
+        $('#newPostModal').modal('hide');
       });
     }
   }

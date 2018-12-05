@@ -5,10 +5,10 @@
 @import "projects.css";
 
 @import "posts.css";
-@import "posts/new.css";
 
 @import "about.css";
 
+@import "components/new-post-modal.css";
 @import "components/rama-admin-toolbar.css";
 @import "components/rama-header.css";
 @import "components/rama-nav.css";
