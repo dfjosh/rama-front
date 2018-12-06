@@ -1,16 +1,16 @@
-.new-post-modal h4 {
+.post-modal-comp h4 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-.new-post-modal ul {
+.post-modal-comp ul {
   text-align: right;
 }
-.new-post-modal li {
+.post-modal-comp li {
   margin-bottom: 2px;
 }
-.new-post-modal button {
+.post-modal-comp button {
   border: none;
 }
-.new-post-modal .content .taxonomy {
+.post-modal-comp .content .taxonomy {
   padding-right: 0px;
 }

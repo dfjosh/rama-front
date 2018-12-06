@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import $ from 'jquery';
 
 export default Component.extend({
-  classNames: ['bootstrap-modal'],
+  classNames: ['modal-comp'],
   modalId: null,
   in: false,
   isRoute: false,

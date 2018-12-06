@@ -3,7 +3,6 @@ import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
 import { htmlSafe } from '@ember/template';
 import { computed } from '@ember/object';
-// import DS from 'ember-data';
 
 export default Model.extend({
   comments: hasMany('comment', {async: true}),
@@ -21,7 +20,6 @@ export default Model.extend({
   updatedAt: attr('date'),
 
   htmlBody: computed('body', function() {
-    var body = this.body;
-    return htmlSafe(body);
+    return htmlSafe(this.body);
   })
 });

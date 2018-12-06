@@ -8,7 +8,7 @@
 
 @import "about.css";
 
-@import "components/new-post-modal.css";
+@import "components/post-modal-comp.css";
 @import "components/rama-admin-toolbar.css";
 @import "components/rama-header.css";
 @import "components/rama-nav.css";

@@ -5,13 +5,21 @@ import RSVP from 'rsvp';
 import $ from 'jquery';
 
 export default Component.extend({
-  classNames: ['new-post-modal'],
+  classNames: ['post-modal-comp'],
   store: service(),
   router: service(),
   
-  model: computed(function() {
-    return this.store.createRecord('post');
-  }),
+  isRoute: false,
+  // model: null,
+  // post: null,
+  // 
+  // model: computed('post', function() {
+  //   if (this.post !== null) {
+  //     return this.post;
+  //   } else {
+  //     return this.store.createRecord('post');
+  //   }
+  // }),
   
   categories: computed(function() {
     return this.store.findAll('category');
@@ -45,7 +53,7 @@ export default Component.extend({
       }).then(() => {
         this.model.reload();
         this.router.transitionTo('posts', {queryParams: {page: 1}}); // queryParams so that the model reloads
-        $('#newPostModal').modal('hide');
+        $('#postModalComp').modal('hide');
       });
     }
   }

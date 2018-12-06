@@ -21,7 +21,9 @@ Router.map(function() {
         this.route('edit', {path: ':taxonomy_id/edit'});
       });
     });
-    this.route('posts');
+    this.route('posts', function() {
+      this.route('edit', {path: ':post_id/edit'});
+    });
   });
 });
 
