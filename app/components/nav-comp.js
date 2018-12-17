@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 
 export default Component.extend({
-  classNames: ['rama-taxonomy']
+  classNames: ['nav-comp'],
+  tagName: 'nav'
 });

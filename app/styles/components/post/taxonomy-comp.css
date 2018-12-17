@@ -1,19 +1,19 @@
-.rama-taxonomy ul {
+.taxonomy-comp ul {
   text-align: right;
 }
-.rama-taxonomy li {
+.taxonomy-comp li {
   margin-bottom: 2px;
 }
-.rama-taxonomy button {
+.taxonomy-comp button {
   border: none;
 }
 
 @media (max-width: 768px) {
-  .rama-taxonomy ul {
+  .taxonomy-comp ul {
     text-align: left;
     display: inline-block;
   }
-  .rama-taxonomy li {
+  .taxonomy-comp li {
     margin-bottom: auto;
     display: inline-block;
   }

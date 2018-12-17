@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import ENV from '../config/environment';
 
 export default Component.extend({
-  classNames: ['rama-header'],
+  classNames: ['header-comp'],
   tagName: 'header',
   ENV: ENV
 });

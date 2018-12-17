@@ -1,37 +1,37 @@
-.rama-header {
+.header-comp {
   background-color: #3e3e3e;
 }
-.rama-header a {
+.header-comp a {
   display: block;
 }
-.rama-header a div {
+.header-comp a div {
   max-width: 1080px;
   margin: 0px auto;
   position: relative;
 }
-.rama-header a div.title {
+.header-comp a div.title {
   position: absolute;
   top: 0px;
   left: 0px;
 }
-.rama-header h1 {
+.header-comp h1 {
   font-size: 48px;
   font-weight: 700;
   margin-left: 32px;
 }
-.rama-header h2 {
+.header-comp h2 {
   font-size: 24px;
   font-weight: 700;
   margin-left: 32px;
   margin-top: 15px;
 }
-.rama-header a:link, 
-.rama-header a:visited, 
-.rama-header a:hover, 
-.rama-header a:active {
+.header-comp a:link, 
+.header-comp a:visited, 
+.header-comp a:hover, 
+.header-comp a:active {
   color: #565656;
 }
-.rama-header a img {
+.header-comp a img {
   width: 100%;
   padding: 12px;
 }

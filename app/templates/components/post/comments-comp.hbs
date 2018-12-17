@@ -4,7 +4,7 @@
     <ul class="list-unstyled">
       {{#each post.comments as |comment|}}
         <li>
-          <p>{{rama-attribution post=comment}} said:</p>
+          <p>{{post/attribution-comp post=comment}} said:</p>
           <p class="bg-disabled">{{comment.content}}</p>
         </li>
       {{/each}}

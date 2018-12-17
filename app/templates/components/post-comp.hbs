@@ -36,13 +36,13 @@
     <div class="row content">
       <div class="col-sm-{{gutterColumns}} taxonomy">
         {{#if showTaxonomy}}
-          {{post/rama-taxonomy post=post}}
+          {{post/taxonomy-comp post=post}}
         {{/if}}
       </div>
       <div class="col-sm-{{contentColumns}}">
         <p>{{post.htmlBody}}</p>
         {{#if showAttribution}}
-          <p>&mdash; by {{rama-attribution post=post}}</p>
+          <p>&mdash; by {{post/attribution-comp post=post}}</p>
         {{/if}}
         <hr class={{if showHorizontalRule "" "invisible"}}>
       </div>

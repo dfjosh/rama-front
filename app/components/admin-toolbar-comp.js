@@ -3,7 +3,7 @@ import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 
 export default Component.extend({
-  classNames: ['rama-admin-toolbar'],
+  classNames: ['admin-toolbar-comp'],
   
   store: service(),
   

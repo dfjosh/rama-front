@@ -1,16 +1,16 @@
-{{rama-header}}
+{{header-comp}}
 
-{{rama-nav}}
+{{nav-comp}}
 
 <main class="container-fluid">
 
   {{#each model as |post|}}
-    {{rama-post 
+    {{post-comp 
       post=post
       showFeatureImage=false
     }}
   {{/each}}
 
-  {{rama-pagination store=store limit=limit page=page total=total}} {{!-- why don't I need to pass the model here? --}}
+  {{pagination-comp store=store limit=limit page=page total=total}} {{!-- why don't I need to pass the model here? --}}
 
 </main>

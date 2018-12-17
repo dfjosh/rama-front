@@ -8,12 +8,12 @@
 
 @import "about.css";
 
+@import "components/admin-toolbar-comp.css";
+@import "components/header-comp.css";
+@import "components/nav-comp.css";
+@import "components/pagination-comp.css";
+@import "components/post-comp.css";
 @import "components/post-modal-comp.css";
-@import "components/rama-admin-toolbar.css";
-@import "components/rama-header.css";
-@import "components/rama-nav.css";
-@import "components/rama-pagination.css";
-@import "components/rama-post.css";
 
-@import "components/post/rama-comments.css";
-@import "components/post/rama-taxonomy.css";
+@import "components/post/comments-comp.css";
+@import "components/post/taxonomy-comp.css";
