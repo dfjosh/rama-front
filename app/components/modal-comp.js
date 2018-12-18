@@ -4,7 +4,7 @@ import $ from 'jquery';
 export default Component.extend({
   classNames: ['modal-comp'],
   modalId: null,
-  in: false,
+  // in: false, // using isRoute instead
   isRoute: false,
   size: null,
   
