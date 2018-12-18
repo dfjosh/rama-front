@@ -9,18 +9,6 @@ export default Component.extend({
   store: service(),
   router: service(),
   
-  isRoute: false,
-  // model: null,
-  // post: null,
-  // 
-  // model: computed('post', function() {
-  //   if (this.post !== null) {
-  //     return this.post;
-  //   } else {
-  //     return this.store.createRecord('post');
-  //   }
-  // }),
-  
   categories: computed(function() {
     return this.store.findAll('category');
   }),
@@ -51,9 +39,9 @@ export default Component.extend({
           post.postTags.map(postTag => postTag.save())
         ]);
       }).then(() => {
+        $(`#${this.modalId}`).modal('hide');
         this.model.reload();
         this.router.transitionTo('posts', {queryParams: {page: 1}}); // queryParams so that the model reloads
-        $('#postModalComp').modal('hide');
       });
     }
   }
