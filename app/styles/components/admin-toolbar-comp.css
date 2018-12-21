@@ -1,3 +1,9 @@
+.admin-toolbar-comp {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1000;
+}
 .admin-toolbar-comp nav.navbar {
   min-height: 28px;
   border-radius: 0px;

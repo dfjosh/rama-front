@@ -9,6 +9,17 @@ export default Component.extend({
   store: service(),
   router: service(),
   
+  init() {
+    this._super(...arguments);
+    if (!this.model.isNew) {
+      console.log(this.model.title);
+      return this.model.get('postTags').then(postTags => {
+        console.log(postTags.length);
+        return postTags;
+      });
+    }
+  },
+  
   categories: computed(function() {
     return this.store.findAll('category');
   }),
