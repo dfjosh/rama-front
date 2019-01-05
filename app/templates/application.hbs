@@ -1,3 +1,5 @@
-{{admin-toolbar-comp}}
+{{#if session.isAuthenticated}}
+  {{admin-toolbar-comp}}
+{{/if}}
 
 {{outlet}}

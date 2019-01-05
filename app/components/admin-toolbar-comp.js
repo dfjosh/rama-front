@@ -6,6 +6,7 @@ export default Component.extend({
   classNames: ['admin-toolbar-comp'],
   
   store: service(),
+  session: service(),
   
   newPost: computed(function() {
     return this.store.createRecord('post');
@@ -13,7 +14,7 @@ export default Component.extend({
   
   actions: {
     logout() {
-      
+      this.session.invalidate();
     }
   }
 });
