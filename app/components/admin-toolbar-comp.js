@@ -9,5 +9,11 @@ export default Component.extend({
   
   newPost: computed(function() {
     return this.store.createRecord('post');
-  })
+  }),
+  
+  actions: {
+    logout() {
+      
+    }
+  }
 });
