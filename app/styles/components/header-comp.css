@@ -1,6 +1,8 @@
 .header-comp {
   background-color: #3e3e3e;
-  margin-top: 32px; /* for the admin-toolbar-comp. This will need to be dynamic once users are implemented */
+}
+.header-comp.admin-toolbar-margin {
+  margin-top: 32px;
 }
 .header-comp a {
   display: block;
