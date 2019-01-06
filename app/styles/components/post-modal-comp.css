@@ -8,7 +8,7 @@
 .post-modal-comp li {
   margin-bottom: 2px;
 }
-.post-modal-comp button {
+.post-modal-comp .taxonomy button {
   border: none;
 }
 .post-modal-comp .content .taxonomy {

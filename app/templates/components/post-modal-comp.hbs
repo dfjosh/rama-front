@@ -71,8 +71,19 @@
         <div class="form-group form-group-lg">
           {{textarea class="form-control input-lg" value=model.body rows="10" placeholder="What's happening?"}}
         </div>
-        <div class="form-group form-group-lg">
-          <button type="button" class="btn btn-lg btn-primary pull-right" {{action "publishPost"}}>Publish</button>
+        <div class="form-inline pull-right">
+          {{#if model.isNew}}
+            <div class="form-group form-group-lg">
+              <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          {{else}}
+            <div class="form-group form-group-lg">
+              <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal" {{action "deletePost"}}>Delete</button>
+            </div>
+          {{/if}}
+          <div class="form-group form-group-lg">
+            <button type="button" class="btn btn-lg btn-primary" {{action "publishPost"}}>Publish</button>
+          </div>
         </div>
       </div>
     </div>

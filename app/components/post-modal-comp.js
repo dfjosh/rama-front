@@ -54,6 +54,9 @@ export default Component.extend({
         this.model.reload();
         this.router.transitionTo('posts', {queryParams: {page: 1}}); // queryParams so that the model reloads
       });
+    },
+    deletePost() {
+      this.model.destroyRecord();
     }
   }
 });
