@@ -16,7 +16,15 @@ export default Controller.extend({
     //   });
     // },
     authenticate() {
-      this.get('session').authenticate('authenticator:oauth2', this.email, this.password)
+      const credentials = this.getProperties('email', 'password');
+      // this.get('session').authenticate('authenticator:jwt', this.email, this.password)
+      this.get('session').authenticate('authenticator:jwt', {auth: credentials}); // Knock requires the "auth" key
+      
+      // try chaining this to authenticate
+      // .catch((reason)=>{
+      //   this.set('errorMessage', reason.error || reason);
+      // });
+      
     }
   }
 });

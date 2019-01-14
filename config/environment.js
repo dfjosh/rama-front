@@ -24,6 +24,12 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: `${ENV.apiURL}/user_token/`,
+    tokenPropertyName: 'token', // "token" is the default
+    refreshTokenPropertyName: 'token' // "refresh_token" is the default, but setting to "token" to use the same token for both access and refresh requests
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
