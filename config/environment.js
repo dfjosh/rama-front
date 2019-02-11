@@ -8,6 +8,7 @@ module.exports = function(environment) {
     locationType: 'router-scroll', // 'auto'
     historySupportMiddleware: true,
     apiURL: 'http://localhost:3000',
+    cdnURL: 'http://localhost:3000',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -53,6 +54,8 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+    ENV.apiURL = 'https://distant-future-josh.herokuapp.com';
+    ENV.cdnURL = 'https://s3-us-west-1.amazonaws.com/lazy-rama';
   }
 
   return ENV;
