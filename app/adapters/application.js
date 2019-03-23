@@ -9,7 +9,7 @@ export default DS.JSONAPIAdapter.extend(TokenAuthorizerMixin, {
   init() {
     this._super(...arguments);
     this.set('headers', {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/vnd.api+json'
     });
   },
   pathForType(type) {

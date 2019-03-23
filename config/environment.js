@@ -7,7 +7,7 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'router-scroll', // 'auto'
     historySupportMiddleware: true,
-    apiURL: 'http://localhost:3000',
+    apiURL: 'http://localhost:3000/api',
     cdnURL: 'http://localhost:3000',
     EmberENV: {
       FEATURES: {
@@ -54,7 +54,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.apiURL = 'https://distant-future-josh.herokuapp.com';
+    ENV.apiURL = 'https://distant-future-josh.herokuapp.com/api';
     ENV.cdnURL = 'https://s3-us-west-1.amazonaws.com/lazy-rama';
   }
 
