@@ -3,12 +3,15 @@ import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 import RSVP from 'rsvp';
 import $ from 'jquery';
+import Post from 'rama-front/models/post';
 
 export default Component.extend({
   classNames: ['post-modal-comp'],
   store: service(),
   router: service(),
   
+  Post: Post,
+    
   init() {
     this._super(...arguments);
     if (!this.model.isNew) {
@@ -43,7 +46,8 @@ export default Component.extend({
       });
       this.model.postTags.pushObject(postTag);
     },
-    publishPost() {
+    savePost(state) {
+      this.model.set('state', state);
       this.model.save().then(post => {
         return RSVP.all([
           post.postCategories.map(postCategory => postCategory.save()),

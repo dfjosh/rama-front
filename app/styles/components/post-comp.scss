@@ -8,6 +8,15 @@
   height: 250px;
   margin-bottom: 12px;
 }
+.post-comp article {
+  position: relative;
+}
+.post-comp article button.publish-draft-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+}
 .post-comp article h1 {
   /* padding-left: 60px;
   text-indent: -32px; */

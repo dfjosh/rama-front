@@ -9,7 +9,7 @@ export default DS.JSONAPIAdapter.extend(TokenAuthorizerMixin, {
   init() {
     this._super(...arguments);
     this.set('headers', {
-      'Content-Type': 'application/vnd.api+json'
+      'Content-Type': 'application/json' // 'application/vnd.api+json' doesn't work. Might need to register it in rails if I want to use it (I think I should)
     });
   },
   pathForType(type) {

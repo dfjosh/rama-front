@@ -1,4 +1,9 @@
-<article class="row">
+<article class="row {{if post.isDraft 'bg-warning'}}">
+  {{#if post.isDraft}}
+    <button class="btn btn-xs btn-default publish-draft-btn" type="button" {{action "publishDraft" post}}>
+      Publish
+    </button>
+  {{/if}}
   <div class="col-sm-12">
 
     <div class="row title">

@@ -82,7 +82,10 @@
             </div>
           {{/if}}
           <div class="form-group form-group-lg">
-            <button type="button" class="btn btn-lg btn-primary" {{action "publishPost"}}>Publish</button>
+            <button type="button" class="btn btn-lg btn-warning" {{action "savePost" Post.DRAFT}}>Save Draft</button>
+          </div>
+          <div class="form-group form-group-lg">
+            <button type="button" class="btn btn-lg btn-primary" {{action "savePost" Post.PUBLISHED}}>Publish</button>
           </div>
         </div>
       </div>

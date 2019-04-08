@@ -5,7 +5,11 @@ import { htmlSafe } from '@ember/template';
 import { computed } from '@ember/object';
 import ENV from '../config/environment';
 
-export default Model.extend({
+const DRAFT = "DRAFT";
+const PUBLISHED = "PUBLISHED";
+const ARCHIVED = "ARCHIVED";
+
+let post = Model.extend({
   comments: hasMany('comment', {async: true}),
   categories: hasMany('category', {async: true}),
   postCategories: hasMany('post-category', {async: true}),
@@ -15,6 +19,7 @@ export default Model.extend({
   title: attr(),
   author: attr(),
   body: attr(),
+  state: attr(),
   featureImage: attr(),
   featureLink: attr(),
   createdAt: attr('date'),
@@ -24,5 +29,25 @@ export default Model.extend({
     let placeholder = /&cdnURL&/g;
     let body = this.body.replace(placeholder, ENV.cdnURL);
     return htmlSafe(body);
+  }),
+  
+  isDraft: computed('state', function() {
+    return this.get('state') === DRAFT;
+  }),
+  
+  isPublished: computed('state', function() {
+    return this.get('state') === PUBLISHED;
+  }),
+  
+  isArchived: computed('state', function() {
+    return this.get('state') === ARCHIVED;
   })
 });
+
+post.reopenClass({
+  DRAFT: DRAFT,
+  PUBLISHED: PUBLISHED,
+  ARCHIVED: ARCHIVED
+})
+
+export default post;
