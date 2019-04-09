@@ -31,6 +31,12 @@ export default Component.extend({
     return this.store.findAll('tag');
   }),
   
+  clear() {
+    this.model.eachAttribute(attr => {
+      this.model.set(attr, undefined);
+    });
+  },
+  
   actions: {
     addCategory(category) {
       let postCategory = this.store.createRecord('post-category', {
@@ -58,6 +64,9 @@ export default Component.extend({
         this.model.reload();
         this.router.transitionTo('posts', {queryParams: {page: 1}}); // queryParams so that the model reloads
       });
+    },
+    cancelPost() {
+      this.clear();
     },
     deletePost() {
       this.model.destroyRecord();

@@ -6,12 +6,12 @@ import TokenAuthorizerMixin from 'ember-simple-auth-token/mixins/token-authorize
 
 export default DS.JSONAPIAdapter.extend(TokenAuthorizerMixin, {
   host: ENV.apiURL,
-  init() {
-    this._super(...arguments);
-    this.set('headers', {
-      'Content-Type': 'application/json' // 'application/vnd.api+json' doesn't work. Might need to register it in rails if I want to use it (I think I should)
-    });
-  },
+  // init() {
+  //   this._super(...arguments);
+  //   this.set('headers', {
+  //     'Content-Type': 'application/json' // don't need this anymore since I registered 'application/vnd.api+json' (JSONAPIAdapter's default mime type) in Rails
+  //   });
+  // },
   pathForType(type) {
     return pluralize(underscore(type));
   }
