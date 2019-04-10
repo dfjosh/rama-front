@@ -12,14 +12,24 @@ export default Component.extend({
   
   Post: Post,
     
-  init() {
+  init(refreshModel) {
     this._super(...arguments);
-    if (!this.model.isNew) {
-      console.log(this.model.title);
-      return this.model.get('postTags').then(postTags => {
-        console.log(postTags.length);
-        return postTags;
-      });
+    // if (!this.model.isNew) {
+    //   console.log(this.model.title);
+    //   return this.model.get('postTags').then(postTags => {
+    //     console.log(postTags.length);
+    //     return postTags;
+    //   });
+    // }
+    
+    // if (refreshModel === true) {
+    //   this.set('model', this.store.createRecord('post'));
+    // } else if (this.model === undefined) {
+    //   this.model = this.store.createRecord('post');
+    // }
+    
+    if (this.model === undefined || refreshModel === true) {
+      this.set('model', this.store.createRecord('post'));
     }
   },
   
@@ -61,7 +71,10 @@ export default Component.extend({
         ]);
       }).then(() => {
         $(`#${this.modalId}`).modal('hide');
-        this.model.reload();
+        // this.model.reload();
+        // this.rerender();
+        this.init(true);
+        // window.location.reload(true);
         this.router.transitionTo('posts', {queryParams: {page: 1}}); // queryParams so that the model reloads
       });
     },
