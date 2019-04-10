@@ -16,7 +16,7 @@
         <td>{{post.title}}</td>
         <td>{{post.author}}</td>
         <td>{{formatted-date post.createdAt "YYYY-MM-DD HH:mm:ss"}}</td>
-        <td><span class={{if post.featureImage 'glyphicon glyphicon-ok'}}></span></td>
+        <td><span class={{if post.featureImage "glyphicon glyphicon-ok"}}></span></td>
         <td>
           {{#link-to "admin.posts.edit" post}}
             <span class="glyphicon glyphicon-pencil"></span>
