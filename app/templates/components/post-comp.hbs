@@ -45,7 +45,7 @@
         {{/if}}
       </div>
       <div class="col-sm-{{contentColumns}}">
-        <p>{{post.htmlBody}}</p>
+        <p>{{ellipsis post.htmlBody bodyLimit}}</p>
         {{#if showAttribution}}
           <p>&mdash; by {{post/attribution-comp post=post}}</p>
         {{/if}}

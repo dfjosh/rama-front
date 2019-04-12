@@ -13,6 +13,7 @@ export default Component.extend({
   showTaxonomy: true,
   showAttribution: true,
   showHorizontalRule: true,
+  bodyLimit: null,
   gutterColumns: 2,
   
   contentColumns: computed('gutterColumns', function() {
