@@ -17,6 +17,7 @@ let post = Model.extend({
   postTags: hasMany('post-tag', {async: true}),
 
   title: attr(),
+  slug: attr(),
   author: attr(),
   body: attr(),
   state: attr(),
@@ -32,15 +33,15 @@ let post = Model.extend({
   }),
   
   isDraft: computed('state', function() {
-    return this.get('state') === DRAFT;
+    return this.state === DRAFT;
   }),
   
   isPublished: computed('state', function() {
-    return this.get('state') === PUBLISHED;
+    return this.state === PUBLISHED;
   }),
   
   isArchived: computed('state', function() {
-    return this.get('state') === ARCHIVED;
+    return this.state === ARCHIVED;
   })
 });
 

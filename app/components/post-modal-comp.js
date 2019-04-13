@@ -1,6 +1,7 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
+import { computed, observer } from '@ember/object';
+import { dasherize } from '@ember/string';
 import RSVP from 'rsvp';
 import $ from 'jquery';
 import Post from 'rama-front/models/post';
@@ -11,7 +12,9 @@ export default Component.extend({
   router: service(),
   
   Post: Post,
-    
+  slug: null,
+  slugOverride: false,
+  
   init(refreshModel) {
     this._super(...arguments);
     // if (!this.model.isNew) {
@@ -41,13 +44,27 @@ export default Component.extend({
     return this.store.findAll('tag');
   }),
   
+  dasherizedTitle: computed('model.title', function() {
+    return this.model.title === undefined ? undefined : dasherize(this.model.title);
+  }),
+
+  slugObserver: observer('model.title', function() {
+    if (!this.slugOverride) {
+      this.set('slug', this.dasherizedTitle);
+    }
+  }),
+  
   clear() {
     this.model.eachAttribute(attr => {
       this.model.set(attr, undefined);
     });
+    this.set('slug', null);
   },
   
   actions: {
+    onSlugOverride() {
+      this.set('slugOverride', true);
+    },
     addCategory(category) {
       let postCategory = this.store.createRecord('post-category', {
         category: category,
@@ -64,6 +81,7 @@ export default Component.extend({
     },
     savePost(state) {
       this.model.set('state', state);
+      this.model.set('slug', this.slug);
       this.model.save().then(post => {
         return RSVP.all([
           post.postCategories.map(postCategory => postCategory.save()),

@@ -10,6 +10,9 @@
         <div class="form-group form-group-lg">
           {{input class="form-control input-lg" value=model.title type="text" placeholder="Title"}}
         </div>
+        <div class="form-group form-group-sm">
+          {{input class="form-control input-sm" value=slug type="text" placeholder="Slug" key-press=(action "onSlugOverride")}}
+        </div>
       </div>
     </div>
 
