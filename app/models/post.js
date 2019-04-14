@@ -1,8 +1,10 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
+import { belongsTo } from 'ember-data/relationships';
 import { htmlSafe } from '@ember/template';
 import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
 import ENV from '../config/environment';
 
 const DRAFT = "DRAFT";
@@ -10,6 +12,7 @@ const PUBLISHED = "PUBLISHED";
 const ARCHIVED = "ARCHIVED";
 
 let post = Model.extend({
+  user: belongsTo('user', {async: true}),
   comments: hasMany('comment', {async: true}),
   categories: hasMany('category', {async: true}),
   postCategories: hasMany('post-category', {async: true}),
@@ -18,7 +21,7 @@ let post = Model.extend({
 
   title: attr(),
   slug: attr(),
-  author: attr(),
+  author: alias('user'),
   body: attr(),
   state: attr(),
   featureImage: attr(),

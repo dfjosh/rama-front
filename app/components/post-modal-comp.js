@@ -10,6 +10,7 @@ export default Component.extend({
   classNames: ['post-modal-comp'],
   store: service(),
   router: service(),
+  current: service(),
   
   Post: Post,
   slug: null,
@@ -80,8 +81,13 @@ export default Component.extend({
       this.model.postTags.pushObject(postTag);
     },
     savePost(state) {
-      this.model.set('state', state);
-      this.model.set('slug', this.slug);
+      // this.model.set('state', state);
+      // this.model.set('slug', this.slug);
+      this.model.setProperties({
+        state: state,
+        slug: this.slug,
+        author: this.current.user
+      })
       this.model.save().then(post => {
         return RSVP.all([
           post.postCategories.map(postCategory => postCategory.save()),

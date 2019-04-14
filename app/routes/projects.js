@@ -1,6 +1,11 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
+import Post from 'rama-front/models/post';
 
 export default Route.extend({
+  session: service(),
+  current: service(),
+
   // queryParams: {
   //   page: {
   //     refreshModel: true
@@ -8,13 +13,22 @@ export default Route.extend({
   // },
   
   model() {
-    return this.store.query('post', {
-      filter: {
-        name: "categories.name",
-        op: "=",
-        val: "Projects"
-      }
+    let projectParams = {}
+    projectParams.filters = []
+    projectParams.filters.push({
+      name: "categories.name",
+      op: "=",
+      val: "Projects"
     });
+    projectParams.filters.push({
+      name: "state",
+      op: "=",
+      val: Post.PUBLISHED
+    });
+    if (this.session.isAuthenticated && this.current.user.isAdmin) {
+      projectParams.filters.pop();
+    }
+    return this.store.query('post', projectParams);
   }
 
   // model() {     // params

@@ -6,6 +6,7 @@ export default Component.extend({
   
   store: service(),
   session: service(),
+  current: service(),
   
   actions: {
     logout() {
