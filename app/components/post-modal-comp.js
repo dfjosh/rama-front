@@ -13,34 +13,19 @@ export default Component.extend({
   current: service(),
   
   Post: Post,
-  header: "Post",
+  
+  headerText: null,
   slug: null,
   slugOverride: false,
+  slugLock: false,
   
   init(refreshModel) {
     this._super(...arguments);
-    // if (!this.model.isNew) {
-    //   console.log(this.model.title);
-    //   return this.model.get('postTags').then(postTags => {
-    //     console.log(postTags.length);
-    //     return postTags;
-    //   });
-    // }
-    
-    // if (refreshModel === true) {
-    //   this.set('model', this.store.createRecord('post'));
-    // } else if (this.model === undefined) {
-    //   this.model = this.store.createRecord('post');
-    // }
-    
+
     if (this.model === undefined || refreshModel === true) {
       this.set('model', this.store.createRecord('post'));
-      this.set('header', 'New Post');
     }
-    
-    if (!this.model.isNew) {
-      this.set('slug', this.model.slug);
-    }
+    console.log(this.model.slug);
   },
   
   categories: computed(function() {
@@ -62,6 +47,7 @@ export default Component.extend({
   }),
 
   slugObserver: observer('model.title', 'slugOverride', function() {
+    console.log('slugObserver');
     if (!this.slugOverride) {
       this.set('slug', this.slugifiedTitle);
     }
@@ -81,6 +67,9 @@ export default Component.extend({
     resetSlugOverride() {
       this.set('slugOverride', false);
     },
+    toggleSlugLock() {
+      this.toggleProperty('slugLock');
+    },
     addCategory(category) {
       let postCategory = this.store.createRecord('post-category', {
         category: category,
@@ -98,9 +87,11 @@ export default Component.extend({
     savePost(state) {
       this.model.setProperties({
         state: state,
-        slug: this.slug,
         author: this.current.user
       })
+      if (this.model.isNew) {
+        this.model.set('slug', this.slug); // set it to the "intermediate slug value" if its new, otherwise the model's slug is updated directly
+      }
       this.model.save().then(post => {
         return RSVP.all([
           post.postCategories.map(postCategory => postCategory.save()),

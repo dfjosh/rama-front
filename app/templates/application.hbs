@@ -1,7 +1,7 @@
 {{#if session.isAuthenticated}}
   {{#if current.user.isAdmin}}
     {{admin-toolbar-comp}}
-    {{post-modal-comp modalId="newPostModal"}} {{!-- IMPORTANT needs to live here because the admin-toolbar-comp is positioned fixed which bootstrap modals don't like --}}
+    {{post-modal-comp headerText="New Post" modalId="newPostModal"}} {{!-- IMPORTANT needs to live here because the admin-toolbar-comp is positioned fixed which bootstrap modals don't like --}}
   {{/if}}
 {{/if}}
 

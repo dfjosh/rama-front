@@ -34,8 +34,8 @@ export default Route.extend({
     postParams.limit = params.limit,
     postParams.page = params.page,
     postParams.includes = [
-      "tags",
-      "categories"
+      "post_tags",
+      "post_categories"
     ]
     return this.store.query('post', postParams);
   }
