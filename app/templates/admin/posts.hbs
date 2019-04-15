@@ -14,7 +14,7 @@
       <tr>
         <td>{{post.id}}</td>
         <td>{{post.title}}</td>
-        <td>{{post.author}}</td>
+        <td>{{post.author.fullName}}</td>
         <td>{{formatted-date post.createdAt "YYYY-MM-DD HH:mm:ss"}}</td>
         <td><span class={{if post.featureImage "glyphicon glyphicon-ok"}}></span></td>
         <td>

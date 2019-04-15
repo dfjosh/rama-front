@@ -13,6 +13,7 @@ export default Component.extend({
   current: service(),
   
   Post: Post,
+  header: "Post",
   slug: null,
   slugOverride: false,
   
@@ -34,6 +35,11 @@ export default Component.extend({
     
     if (this.model === undefined || refreshModel === true) {
       this.set('model', this.store.createRecord('post'));
+      this.set('header', 'New Post');
+    }
+    
+    if (!this.model.isNew) {
+      this.set('slug', this.model.slug);
     }
   },
   
@@ -45,13 +51,19 @@ export default Component.extend({
     return this.store.findAll('tag');
   }),
   
-  dasherizedTitle: computed('model.title', function() {
-    return this.model.title === undefined ? undefined : dasherize(this.model.title);
+  slugifiedTitle: computed('model.title', function() {
+    let slug = undefined;
+    if (this.model.title !== undefined) {
+      slug = dasherize(this.model.title);
+      slug = slug.replace(/^-|-$/g, '');          // strip hyphens at beginning and end
+      slug = slug.replace(/[^-a-zA-Z0-9]+/g, ''); // remove anything not letters or numbers or hyphens
+    }
+    return slug;
   }),
 
-  slugObserver: observer('model.title', function() {
+  slugObserver: observer('model.title', 'slugOverride', function() {
     if (!this.slugOverride) {
-      this.set('slug', this.dasherizedTitle);
+      this.set('slug', this.slugifiedTitle);
     }
   }),
   
@@ -65,6 +77,9 @@ export default Component.extend({
   actions: {
     onSlugOverride() {
       this.set('slugOverride', true);
+    },
+    resetSlugOverride() {
+      this.set('slugOverride', false);
     },
     addCategory(category) {
       let postCategory = this.store.createRecord('post-category', {
@@ -81,8 +96,6 @@ export default Component.extend({
       this.model.postTags.pushObject(postTag);
     },
     savePost(state) {
-      // this.model.set('state', state);
-      // this.model.set('slug', this.slug);
       this.model.setProperties({
         state: state,
         slug: this.slug,
@@ -100,6 +113,8 @@ export default Component.extend({
         this.init(true);
         // window.location.reload(true);
         this.router.transitionTo('posts', {queryParams: {page: 1}}); // queryParams so that the model reloads
+      }).catch(e => {
+        alert(e);
       });
     },
     cancelPost() {

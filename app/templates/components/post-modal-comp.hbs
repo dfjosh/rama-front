@@ -1,17 +1,33 @@
 {{#modal-comp modalId=modalId size="lg" isRoute=isRoute}}
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-    <h4>New Post</h4>
+    <h4>{{header}}</h4>
   </div>
   <div class="modal-body">
 
     <div class="row title">
       <div class="col-sm-10 col-sm-offset-2">
-        <div class="form-group form-group-lg">
-          {{input class="form-control input-lg" value=model.title type="text" placeholder="Title"}}
-        </div>
-        <div class="form-group form-group-sm">
+        {{#if model.isNew}} {{!-- only show the visit button if post is NOT new --}}
+          <div class="form-group form-group-lg">
+            {{input class="form-control input-lg" value=model.title type="text" placeholder="Title"}}
+          </div>
+        {{else}}
+          <div class="input-group input-group-lg">
+            {{input class="form-control input-lg" value=model.title type="text" placeholder="Title"}}
+            <span class="input-group-btn">
+              {{#link-to "post" model class="btn btn-success" role="button" target="_blank"}}
+                <span class="glyphicon glyphicon-link"></span>
+              {{/link-to}}
+            </span>
+          </div>
+        {{/if}}
+      </div>
+      <div class="col-sm-10 col-sm-offset-2">
+        <div class="input-group input-group-sm">
           {{input class="form-control input-sm" value=slug type="text" placeholder="Slug" key-press=(action "onSlugOverride")}}
+          <span class="input-group-btn">
+            <button class="btn btn-danger" type="button" disabled={{not slugOverride}} {{action "resetSlugOverride"}}>Reset</button>
+          </span>
         </div>
       </div>
     </div>
