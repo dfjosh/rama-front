@@ -25,7 +25,6 @@ export default Component.extend({
     if (this.model === undefined || refreshModel === true) {
       this.set('model', this.store.createRecord('post'));
     }
-    console.log(this.model.slug);
   },
   
   categories: computed(function() {
@@ -47,7 +46,6 @@ export default Component.extend({
   }),
 
   slugObserver: observer('model.title', 'slugOverride', function() {
-    console.log('slugObserver');
     if (!this.slugOverride) {
       this.set('slug', this.slugifiedTitle);
     }
