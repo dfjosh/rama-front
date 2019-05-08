@@ -6,12 +6,6 @@ export default Route.extend({
   session: service(),
   current: service(),
 
-  // queryParams: {
-  //   page: {
-  //     refreshModel: true
-  //   }
-  // },
-  
   model() {
     let projectParams = {}
     projectParams.filters = []
@@ -30,19 +24,4 @@ export default Route.extend({
     }
     return this.store.query('post', projectParams);
   }
-
-  // model() {     // params
-  //   return this.store.query('category', {
-  //     filter: {
-  //       name: 'Projects'
-  //     }
-  //   }).then(categories => {
-  //     let categoryIds = categories.map(c => { return c.id; });
-  //     return this.store.query('post', {
-  //       filter: {
-  //         categories: categoryIds
-  //       }
-  //     });
-  //   });
-  // }
 });
