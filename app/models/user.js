@@ -10,6 +10,7 @@ export default Model.extend({
   lastName: attr(),
   isAdmin: attr(),
   email: attr(),
+  penName: attr(),
   
   fullName: computed('firstName', 'lastName', function() {
     return `${this.firstName} ${this.lastName}`.trim();

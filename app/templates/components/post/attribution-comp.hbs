@@ -1,4 +1,10 @@
-<em><strong>{{if post.author post.author.fullName "Unknown"}}</strong></em>
+<em><strong>
+  {{#if post.author}}
+    {{if post.author.penName post.author.penName post.author.fullName}}
+  {{else}}
+    Unknown
+  {{/if}}
+</strong></em>
 at <em><strong>{{formatted-date post.createdAt "h:mm a"}}</strong></em>
 on <em><strong>{{formatted-date post.createdAt "MMMM D, YYYY"}}</strong></em>
 {{!-- TODO add an edit button --}}
