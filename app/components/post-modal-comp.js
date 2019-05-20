@@ -85,8 +85,7 @@ export default Component.extend({
     savePost(state) {
       this.model.setProperties({
         state: state,
-        author: this.current.user,
-        type: 'Posts::Article' // TODO make this a dropdown or something
+        author: this.current.user
       })
       if (this.model.isNew) {
         this.model.set('slug', this.slug); // set it to the "intermediate slug value" if its new, otherwise the model's slug is updated directly

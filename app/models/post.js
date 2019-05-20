@@ -26,7 +26,6 @@ let post = Model.extend({
   state: attr(),
   featureImage: attr(),
   featureLink: attr(),
-  type: attr(),
   createdAt: attr('date'),
   updatedAt: attr('date'),
 
