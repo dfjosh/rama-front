@@ -1,0 +1,11 @@
+{{#link-to "podcast" podcast class="podcast"}}
+  <div class="info">
+    <h3>
+      {{podcast.title}}
+    </h3>
+    <p>
+      {{podcast.description}}
+    </p>
+  </div>
+  <img src={{concat ENV.cdnURL "/" podcast.image}} />
+{{/link-to}}

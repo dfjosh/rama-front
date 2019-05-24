@@ -27,7 +27,7 @@ module.exports = function(environment) {
   if (environment === 'development') {
     ENV.publicURL = 'http://localhost:3000';
     ENV.apiURL = ENV.publicURL + '/api';
-    ENV.cdnURL = ENV.publicURL;
+    ENV.cdnURL = ENV.publicURL + '/lazy-rama'; // the local 's3'
     
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -39,7 +39,7 @@ module.exports = function(environment) {
   if (environment === 'test') {
     ENV.publicURL = 'http://localhost:3000';
     ENV.apiURL = ENV.publicURL + '/api';
-    ENV.cdnURL = ENV.publicURL;
+    ENV.cdnURL = ENV.publicURL + '/lazy-rama';
     
     // Testem prefers this...
     ENV.locationType = 'none';

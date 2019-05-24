@@ -1,0 +1,14 @@
+{{header-comp fullWidth=true image=(concat ENV.cdnURL "/" model.headerImage)}}
+
+{{nav-comp lighter=true}}
+
+<main class="container-fluid">
+  <ul>
+    {{#each episodePosts as |post|}}
+      <li>
+        {{post.title}}
+        {{post.body}}
+      </li>
+    {{/each}}
+  </ul>
+</main>
