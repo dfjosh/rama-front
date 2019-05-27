@@ -1,0 +1,18 @@
+{{header-comp fullWidth=true image=(concat ENV.cdnURL "/" model.headerImage)}}
+
+{{nav-comp lighter=true}}
+
+<main class="container-fluid">
+  
+  {{#each orderedEpisodes as |episode|}}
+    {{post-comp
+      episode=episode
+      post=episode.post
+      showFeatureImage=false
+      bodyLimit=1200
+    }}
+  {{/each}}
+
+  {{pagination-comp store=store limit=limit page=page total=total}}
+
+</main>

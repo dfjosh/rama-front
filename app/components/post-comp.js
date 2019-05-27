@@ -15,6 +15,7 @@ export default Component.extend({
   showHorizontalRule: true,
   bodyLimit: null,
   gutterColumns: 2,
+  episode: null,
   
   contentColumns: computed('gutterColumns', function() {
     return 12 - this.gutterColumns * 2;

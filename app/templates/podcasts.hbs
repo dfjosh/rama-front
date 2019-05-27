@@ -1,0 +1,13 @@
+{{header-comp showTitle=true}}
+
+{{nav-comp}}
+
+<main class="podcasts container-fluid">
+  
+  {{#each model as |podcast|}}
+    {{podcast-comp
+      podcast=podcast
+    }}
+  {{/each}}
+  
+</main>

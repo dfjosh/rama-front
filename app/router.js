@@ -26,6 +26,8 @@ Router.map(function() {
     });
   });
   this.route('login');
+  this.route('podcasts');
+  this.route('podcast', {path: 'podcasts/:slug'});
 });
 
 export default Router;

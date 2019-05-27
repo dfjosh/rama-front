@@ -18,12 +18,12 @@ export default Route.extend({
         args: ['Projects']
       }
     ]
-    postParams.limit = params.limit,
-    postParams.page = params.page,
-    postParams.includes = [
-      "post_tags",
-      "post_categories"
-    ]
+    postParams.limit = params.limit;
+    postParams.page = params.page;
+    // postParams.includes = [ // just decided to side load everything always after switching to AMS
+    //   "post_tags",
+    //   "post_categories"
+    // ]
     return this.store.query('post', postParams);
   }
 });
