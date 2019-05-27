@@ -1,0 +1,138 @@
+{{#modal-comp modalId=modalId size="lg" isRoute=isRoute}}
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+    <h4>{{headerText}}</h4>
+  </div>
+  <div class="modal-body">
+
+    <div class="row title">
+      <div class="col-sm-10 col-sm-offset-2">
+        {{#if model.isNew}} {{!-- only show the visit button if post is NOT new --}}
+          <div class="form-group form-group-lg">
+            {{input class="form-control input-lg" value=model.title type="text" placeholder="Title"}}
+          </div>
+        {{else}}
+          <div class="input-group input-group-lg">
+            {{input class="form-control input-lg" value=model.title type="text" placeholder="Title"}}
+            <span class="input-group-btn">
+              {{#link-to "post" model.post.slug class="btn btn-success" role="button"}}
+                {{fa-icon "link"}}
+              {{/link-to}}
+            </span>
+          </div>
+        {{/if}}
+      </div>
+      <div class="col-sm-10 col-sm-offset-2">
+        <div class="form-group form-group-sm">
+          {{input class="form-control input-sm" value=image type="text" placeholder="Image"}}
+        </div>
+      </div>
+    </div>
+
+    <div class="row content">
+      <div class="col-sm-2 taxonomy">
+        <ul class="list-unstyled">
+          <li>
+            <div class="dropdown">
+              <button id="podcastButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-success">
+                {{if model.podcast model.podcast.title 'Podcast'}}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu pull-right">
+                {{#each podcasts as |podcast|}}
+                  <li>
+                    <a href="#" {{action "selectPodcast" podcast}}>{{podcast.title}}</a>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button id="postButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-info">
+                {{if model.post model.post.title 'Post'}}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu pull-right">
+                {{#each recentPosts as |post|}}
+                  <li>
+                    <a href="#" {{action "selectPost" post}}>{{post.title}}</a>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="dropdown">
+              <button id="episodeTypeButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-info">
+                {{if model.episodeType model.episodeType 'Episode Type'}}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu pull-right">
+                {{#each Episode.EPISODE_TYPES as |episodeType|}}
+                  <li>
+                    <a href="#" {{action "selectEpisodeType" episodeType}}>{{episodeType}}</a>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="number">
+              <span>Number</span> {{input class="form-control input-sm" value=model.number type="text"}}
+            </div>
+          </li>
+          <li>
+            <div class="duration">
+              <span>Duration</span> {{input class="form-control input-sm" value=model.duration type="text"}}
+            </div>
+          </li>
+          <li>
+            <div class="explicit">
+              <span>Explicit</span> {{input class="form-control input-sm" checked=model.explicit type="checkbox"}}
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-10">
+        <div class="form-group form-group-lg">
+          {{textarea class="form-control input-lg" value=model.summary rows="10" placeholder="iTunes summary"}}
+        </div>
+        <div class="form-group form-group-sm">
+          {{input class="form-control input-sm" value=enclosure.url type="text" placeholder="url relative to s3:/lazy-rama/"}}
+        </div>
+        <div class="form-group form-group-sm">
+          {{input class="form-control input-sm" value=enclosure.size type="text" placeholder="bytes"}}
+        </div>
+        <div class="dropdown">
+          <button id="mimeTypeButton" type="button" data-toggle="dropdown" class="btn btn-xs btn-info">
+            {{if enclosure.mimeType enclosure.mimeType 'mime-type'}}
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            {{#each Enclosure.MIME_TYPES as |mimeType|}}
+              <li>
+                <a href="#" {{action "selectMimeType" mimeType}}>{{mimeType}}</a>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+        <div class="form-inline pull-right">
+          {{#if model.isNew}}
+            <div class="form-group form-group-lg">
+              <button type="button" class="btn btn-lg btn-default" data-dismiss="modal" {{action "cancelEpisode"}}>Cancel</button>
+            </div>
+          {{else}}
+            <div class="form-group form-group-lg">
+              <button type="button" class="btn btn-lg btn-danger" data-dismiss="modal" {{action "deleteEpisode"}}>Delete</button>
+            </div>
+          {{/if}}
+          <div class="form-group form-group-lg">
+            <button type="button" class="btn btn-lg btn-primary" {{action "saveEpisode"}}>Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{{/modal-comp}}

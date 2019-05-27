@@ -28,6 +28,7 @@ let post = Model.extend({
   featureLink: attr(),
   createdAt: attr('date'),
   updatedAt: attr('date'),
+  publishedAt: attr('date'),
 
   htmlBody: computed('body', function() {
     let placeholder = /&cdnURL&/g;

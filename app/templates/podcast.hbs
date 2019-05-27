@@ -3,12 +3,16 @@
 {{nav-comp lighter=true}}
 
 <main class="container-fluid">
-  <ul>
-    {{#each episodePosts as |post|}}
-      <li>
-        {{post.title}}
-        {{post.body}}
-      </li>
-    {{/each}}
-  </ul>
+  
+  {{#each orderedEpisodes as |episode|}}
+    {{post-comp
+      episode=episode
+      post=episode.post
+      showFeatureImage=false
+      bodyLimit=1200
+    }}
+  {{/each}}
+
+  {{pagination-comp store=store limit=limit page=page total=total}}
+
 </main>

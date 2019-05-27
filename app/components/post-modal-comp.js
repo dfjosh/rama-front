@@ -4,6 +4,7 @@ import { computed, observer } from '@ember/object';
 import { dasherize } from '@ember/string';
 import RSVP from 'rsvp';
 import $ from 'jquery';
+import moment from 'moment';
 import Post from 'rama-front/models/post';
 
 export default Component.extend({
@@ -86,6 +87,7 @@ export default Component.extend({
       this.model.setProperties({
         state: state,
         author: this.current.user
+        // publishedAt: moment().format() // TODO allow this to be set in the UI. This isn't working so for now I'll set it on the backend
       })
       if (this.model.isNew) {
         this.model.set('slug', this.slug); // set it to the "intermediate slug value" if its new, otherwise the model's slug is updated directly
