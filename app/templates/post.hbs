@@ -1,4 +1,8 @@
-{{header-comp showTitle=true}}
+{{#if model.episode}}
+  {{header-comp showTitle=false image=model.episode.podcast.headerImage}}
+{{else}}
+  {{header-comp showTitle=true}}
+{{/if}}
 
 {{nav-comp}}
 

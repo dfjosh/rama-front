@@ -52,10 +52,10 @@
         <hr class={{if showHorizontalRule "" "invisible"}}>
       </div>
       <div class="col-sm-{{gutterColumns}} episode-info">
-        {{#if episode}}
-          <button type="button" class="btn btn-xs btn-info">Episode {{episode.number}}</button>
-          <button type="button" class="btn btn-xs btn-info">Length {{pretty-duration episode.duration}}</button>
-          {{#if episode.explicit}}
+        {{#if post.episode}}
+          <button type="button" class="btn btn-xs btn-info">Episode {{post.episode.number}}</button>
+          <button type="button" class="btn btn-xs btn-info">Length {{pretty-duration post.episode.duration}}</button>
+          {{#if post.episode.explicit}}
             <p>
               <button type="button" class="btn btn-xs btn-danger">
                 Explicit

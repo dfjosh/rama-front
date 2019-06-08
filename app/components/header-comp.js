@@ -11,7 +11,7 @@ export default Component.extend({
   
   session: service(),
   
-  image: `${ENV.cdnURL}/uploads/2014/01/dfjHeader_2160x622_grey_transparent.png`,
+  image: 'uploads/2014/01/dfjHeader_2160x622_grey_transparent.png',
   
   adminToolbarMargin: computed('session', function() {
     return this.session.isAuthenticated;
