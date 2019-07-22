@@ -44,6 +44,110 @@
 .header-comp.full-width a img {
   padding: 0px;
 }
+.header-comp.science-fiction-shorts {
+  position: relative;
+}
+.header-comp.science-fiction-shorts a div {
+  max-width: none;
+}
+.header-comp.science-fiction-shorts a h1 {
+  font-family: 'Bungee Inline', cursive;
+  color: white;
+  font-size: 200px;
+  
+}
+.header-comp.science-fiction-shorts h1 {
+  position: relative;
+  z-index: 100;
+
+}
+.header-comp.science-fiction-shorts a div.image {
+  width: 100%;
+  height: 366px;
+  // max-height: 366px;
+  // padding-bottom: 36%;
+  // background: gold;
+  position: relative;
+  overflow: hidden;
+}
+.header-comp.science-fiction-shorts a img {
+  padding: 0px;
+  position: absolute;
+  bottom: -150px;
+  left: 0px;
+  height: 700px;
+  width: auto;
+}
+@media screen and (max-width: 1080px) {
+  .header-comp.science-fiction-shorts a div.image {
+    height: 366px;
+  }
+  .header-comp.science-fiction-shorts a img {
+    bottom: -120px;
+    left: -200px;
+    height: 600px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .header-comp.science-fiction-shorts a div.image {
+    height: 310px;
+  }
+  .header-comp.science-fiction-shorts a img {
+    bottom: -100px;
+    left: -300px;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header-comp.science-fiction-shorts a div.image {
+    height: 300px;
+  }
+  .header-comp.science-fiction-shorts a img {
+    bottom: -80px;
+    left: -400px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .header-comp.science-fiction-shorts a div.image {
+    height: 250px;
+  }
+  .header-comp.science-fiction-shorts a img {
+    bottom: -60px;
+    left: -500px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .header-comp.science-fiction-shorts a div.image {
+    height: 200px;
+  }
+  .header-comp.science-fiction-shorts a img {
+    bottom: -50px;
+    left: -300px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-comp.science-fiction-shorts a div.image {
+    height: 150px;
+  }
+  .header-comp.science-fiction-shorts a img {
+    bottom: -30px;
+    left: -200px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .header-comp.science-fiction-shorts a div.image {
+    height: 100px;
+  }
+  .header-comp.science-fiction-shorts a img {
+    bottom: -10px;
+    left: 0px;
+    height: 100px;
+  }
+}
 @media screen and (max-width: 768px) {
   .header-comp h1 {
     font-size: 36px;
@@ -65,5 +169,29 @@
     font-size: 16px;
     margin-left: 16px;
     margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 413px) {
+  .header-comp h1 {
+    font-size: 24px;
+    margin-left: 12px;
+    margin-bottom: 4px;
+    margin-top:8px;
+  }
+  .header-comp h2 {
+    font-size: 12px;
+    margin-left: 12px;
+    margin-top: 0px;
+  }
+  .header-comp .nav-comp a {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .header-comp .nav-comp ul {
+    width: 300px;
+  }
+  .header-comp .nav-comp ul li {
+    width: 75px;
   }
 }
