@@ -1,7 +1,7 @@
 {{#if model.episode}}
-  {{header-comp showTitle=false image=model.episode.podcast.headerImage}}
+  {{header-comp showTitle=false fullWidth=true class=(concat model.episode.podcast.slug "-header")}}
 {{else}}
-  {{header-comp showTitle=true}}
+  {{header-comp showTitle=true fullWidth=true class="default-header"}}
 {{/if}}
 
 {{nav-comp}}
