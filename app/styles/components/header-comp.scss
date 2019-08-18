@@ -6,16 +6,14 @@
 }
 .header-comp a {
   display: block;
-}
-.header-comp a div {
   max-width: 1080px;
   margin: 0px auto;
   position: relative;
 }
-.header-comp.full-width a div {
+.header-comp.full-width a {
   max-width: 100%;
 }
-.header-comp a div.title {
+.header-comp a .title {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -38,12 +36,135 @@
   color: #565656;
 }
 .header-comp a img {
-  width: 100%;
+  // width: 50%;
+  max-width: 800px;
+  float: right;
   padding: 12px;
+  // position: absolute;
+  // bottom: 40px;
+  // right: 10px;
 }
-.header-comp.full-width a img {
-  padding: 0px;
+// .header-comp.full-width a img {
+//   padding: 0px;
+// }
+.header-comp.default-header a {
+  width: 100%;
+  height: 366px;
+  // background-image: url("https://lazy-rama.s3-us-west-1.amazonaws.com/uploads/2014/01/dfjHeader_2160x622_grey_transparent.png");
+  background-position: center;
+  background-size: cover;
 }
+.header-comp.science-fiction-shorts-header {
+  position: relative;
+}
+.header-comp.science-fiction-shorts-header a {
+  width: 100%;
+  height: 366px;
+  // max-width: none;
+  background-image: url("https://lazy-rama.s3-us-west-1.amazonaws.com/science-fiction-shorts/science-fiction-shorts-header.png");
+  background-position: center;
+  background-size: cover;
+}
+.header-comp.science-fiction-shorts-header a h1 {
+  font-family: 'Bungee Inline', cursive;
+  color: white;
+  font-size: 200px;
+  
+}
+.header-comp.science-fiction-shorts-header h1 {
+  position: relative;
+  z-index: 100;
+
+}
+// .header-comp.science-fiction-shorts a div.image {
+//   width: 100%;
+//   height: 366px;
+//   // max-height: 366px;
+//   // padding-bottom: 36%;
+//   // background: gold;
+//   position: relative;
+//   overflow: hidden;
+// }
+// .header-comp.science-fiction-shorts a img {
+//   padding: 0px;
+//   position: absolute;
+//   bottom: -150px;
+//   left: 0px;
+//   height: 700px;
+//   width: auto;
+// }
+@media screen and (min-width: 1440px) {
+  .header-comp a img {
+    margin-top: 70px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .header-comp.science-fiction-shorts-header a,
+  .header-comp.default-header a {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header-comp.science-fiction-shorts-header a,
+  .header-comp.default-header a {
+    height: 275px;
+  }
+  .header-comp a img {
+    width: 100%;
+    // position: static;
+    // margin-top: -2%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header-comp.science-fiction-shorts-header a,
+  .header-comp.default-header a {
+    height: 250px;
+  }
+  .header-comp a img {
+    width: 100%;
+    position: static;
+    margin-top: -2%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header-comp.science-fiction-shorts-header a,
+  .header-comp.default-header a {
+    height: 200px;
+  }
+  .header-comp a img {
+    width: 100%;
+    position: static;
+    margin-top: -4%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-comp.science-fiction-shorts-header a,
+  .header-comp.default-header a {
+    height: 150px;
+  }
+  .header-comp a img {
+    width: 100%;
+    position: static;
+    margin-top: -6%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header-comp.science-fiction-shorts-header a,
+  .header-comp.default-header a {
+    height: 125px;
+  }
+  .header-comp a img {
+    width: 100%;
+    position: static;
+    margin-top: -6%;
+  }
+}
+@media screen and (max-width: 321px) {
+  .header-comp a img {
+    margin-top: -3%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .header-comp h1 {
     font-size: 36px;
@@ -59,11 +180,38 @@
 @media screen and (max-width: 540px) {
   .header-comp h1 {
     font-size: 24px;
-    margin-left: 16px
+    margin-left: 14px;
+    margin-bottom: 4px;
+    margin-top: 8px;
   }
   .header-comp h2 {
-    font-size: 16px;
-    margin-left: 16px;
-    margin-top: 10px;
+    font-size: 14px;
+    margin-left: 14px;
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .header-comp h1 {
+    font-size: 24px;
+    margin-left: 12px;
+    margin-bottom: 4px;
+    margin-top: 8px;
+  }
+  .header-comp h2 {
+    font-size: 12px;
+    margin-left: 12px;
+    margin-top: -4px;
+    // display: none;
+  }
+  .header-comp .nav-comp a {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .header-comp .nav-comp ul {
+    width: 300px;
+  }
+  .header-comp .nav-comp ul li {
+    width: 75px;
   }
 }

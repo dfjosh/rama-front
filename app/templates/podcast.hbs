@@ -1,4 +1,4 @@
-{{header-comp fullWidth=true image=(concat ENV.cdnURL "/" model.headerImage)}}
+{{header-comp fullWidth=true class=(concat model.slug "-header")}}
 
 {{nav-comp lighter=true}}
 
@@ -6,7 +6,6 @@
   
   {{#each orderedEpisodes as |episode|}}
     {{post-comp
-      episode=episode
       post=episode.post
       showFeatureImage=false
       bodyLimit=1200

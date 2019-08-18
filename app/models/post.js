@@ -18,6 +18,10 @@ let post = Model.extend({
   postCategories: hasMany('post-category', {async: true}),
   tags: hasMany('tag', {async: true}),
   postTags: hasMany('post-tag', {async: true}),
+  episode: belongsTo('episode', {async: true}),
+  // episode: computed('episodes', function() {
+  //   return this.episodes.firstObject;
+  // }),
 
   title: attr(),
   slug: attr(),
@@ -46,7 +50,21 @@ let post = Model.extend({
   
   isArchived: computed('state', function() {
     return this.state === ARCHIVED;
-  })
+  }),
+  
+  // episode: computed(function() {
+  //   let params = {};
+  //   params.filters = [
+  //     {
+  //       scope: 'post_id',
+  //       args: [this.id]
+  //     }
+  //   ];
+  //   params.includes = ["podcast"];
+  //   return this.store.query('episode', params).then(episodes => {
+  //     return episodes.firstObject;
+  //   });
+  // })
 });
 
 post.reopenClass({
