@@ -1,0 +1,19 @@
+.podcast .info .links {
+  margin-top: 24px;
+  
+  a {
+    display: inline-block;
+    border-radius: 4px;
+    
+    .fa {
+      margin-right: 4px;
+    }
+  }
+  
+  // override btn hover styles so it matches the .apple-podcasts-link img
+  a.btn:hover {
+    color: #333 !important;
+    background-color: #fff !important;
+    border-color: #ccc !important;
+  }
+}
