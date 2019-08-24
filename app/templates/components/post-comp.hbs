@@ -52,7 +52,8 @@
       </div>
       <div class="col-sm-{{gutterColumns}} episode-info">
         {{#if post.episode}}
-          {{apple-podcasts-link-comp podcast=post.episode.podcast}}
+          {{apple-podcasts-link-comp podcast=post.episode.podcast small=true}}
+          {{rss-feed-link-comp podcast=post.episode.podcast small=true}}
           <br />
           <button type="button" class="btn btn-xs btn-info">Episode {{post.episode.number}}</button>
           <button type="button" class="btn btn-xs btn-info">Length {{pretty-duration post.episode.duration}}</button>

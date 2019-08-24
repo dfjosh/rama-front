@@ -1,4 +1,4 @@
-<div class="podcast">
+{{#link-to "podcast" podcast class="podcast"}}
   <div class="info">
     <h3>
       {{podcast.title}}
@@ -11,7 +11,8 @@
         {{fa-icon "list"}} Episode list
       {{/link-to}}
       {{apple-podcasts-link-comp podcast=podcast}}
+      {{rss-feed-link-comp podcast=podcast}}
     </div>
   </div>
   <img src={{concat ENV.cdnURL "/" podcast.image}} />
-</div>
+{{/link-to}}

@@ -2,6 +2,7 @@ import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
 import { computed } from '@ember/object';
+import ENV from '../config/environment';
 
 export default Model.extend({
   episodes: hasMany('episode'),
@@ -24,5 +25,9 @@ export default Model.extend({
   
   applePodcastsLink: computed('slug', 'externalId', function() {
     return `https://podcasts.apple.com/us/podcast/${this.slug}/id${this.externalId}`;
+  }),
+  
+  rssFeedLink: computed('slug', 'feed', function() {
+    return `${ENV.cdnURL}/${this.slug}/${this.feed}`;
   })
 });

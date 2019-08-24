@@ -8,6 +8,7 @@ export default Component.extend({
   attributeBindings: ["href"],
   
   ENV: ENV,
+  small: false,
   
   href: computed('podcast', function() {
     return this.get('podcast.applePodcastsLink'); // it bothers me but I guess I still need to use .get() here (based on the error message I got)
