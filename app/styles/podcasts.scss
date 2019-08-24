@@ -23,11 +23,23 @@ main.podcasts.container-fluid {
       opacity: 0;
       transition: all 0.2s ease-in-out;
     }
-    img {
+    > img {
       width: 100%;
     }
   }
   .podcast:hover .info {
     opacity: 100;
+  }
+}
+
+@media screen and (max-width: 866px) {
+  .podcasts .podcast {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .podcasts .podcast .info {
+    padding: 0px;
   }
 }
