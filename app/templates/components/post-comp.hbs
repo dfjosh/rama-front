@@ -44,15 +44,16 @@
           {{post/taxonomy-comp post=post}}
         {{/if}}
       </div>
-      <div class="col-sm-{{contentColumns}}">
+      <div class="col-sm-{{contentColumns}} text">
         <p>{{ellipsis post.htmlBody bodyLimit}}</p>
         {{#if showAttribution}}
           <p>&mdash; by {{post/attribution-comp post=post}}</p>
         {{/if}}
-        <hr class={{if showHorizontalRule "" "invisible"}}>
       </div>
       <div class="col-sm-{{gutterColumns}} episode-info">
         {{#if post.episode}}
+          {{apple-podcasts-link-comp podcast=post.episode.podcast}}
+          <br />
           <button type="button" class="btn btn-xs btn-info">Episode {{post.episode.number}}</button>
           <button type="button" class="btn btn-xs btn-info">Length {{pretty-duration post.episode.duration}}</button>
           {{#if post.episode.explicit}}
@@ -65,6 +66,7 @@
         {{/if}}
       </div>
     </div>
+    <hr class={{if showHorizontalRule "" "invisible"}}>
 
   </div>
 </article>

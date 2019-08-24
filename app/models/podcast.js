@@ -1,6 +1,7 @@
 import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
+import { computed } from '@ember/object';
 
 export default Model.extend({
   episodes: hasMany('episode'),
@@ -18,5 +19,10 @@ export default Model.extend({
   updatedAt: attr('date'),
   slug: attr(),
   state: attr(),
-  headerImage: attr()
+  headerImage: attr(),
+  externalId: attr(),
+  
+  applePodcastsLink: computed('slug', 'externalId', function() {
+    return `https://podcasts.apple.com/us/podcast/${this.slug}/id${this.externalId}`;
+  })
 });
