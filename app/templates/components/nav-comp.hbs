@@ -1,14 +1,33 @@
 <ul>
   <li>
-    {{link-to "Projects" "projects"}}
+    {{#link-to "posts" (query-params page=1) current-when=postLike}}
+      {{fa-icon "flash"}}
+      {{!-- {{fa-icon "heartbeat"}} --}}
+      <span>Feed</span>
+    {{/link-to}}
   </li>
   <li>
-    {{link-to "Posts" "posts" (query-params page=1) current-when=postLike}}
+    {{#link-to "podcasts" current-when=podcastLike}}
+      {{fa-icon "podcast"}}
+      <span>Podcasts</span>
+    {{/link-to}}
   </li>
   <li>
-    {{link-to "Podcasts" "podcasts" current-when=podcastLike}}
+    {{#link-to "projects"}}
+      {{fa-icon "file"}}
+      <span>Stories</span>
+    {{/link-to}}
   </li>
   <li>
-    {{link-to "About" "about"}}
+    {{#link-to "projects"}}
+      {{fa-icon "code"}}
+      <span>Code</span>
+    {{/link-to}}
+  </li>
+  <li>
+    {{#link-to "about"}}
+      {{fa-icon "male"}}
+      <span>Me</span>
+    {{/link-to}}
   </li>
 </ul>
