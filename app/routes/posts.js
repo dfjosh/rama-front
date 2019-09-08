@@ -18,7 +18,7 @@ export default Route.extend({
     postParams.limit = params.limit;
     postParams.page = params.page;
     Object.keys(params).forEach(key => {
-      if (!["limit", "page"].includes(key)) {
+      if (!["limit", "page"].includes(key) && params[key] != null) {
         postParams.filters = [
           {
             scope: key,
@@ -27,7 +27,6 @@ export default Route.extend({
         ];
       }
     });
-    console.log(params)
     // postParams.includes = [ // just decided to side load everything always after switching to AMS
     //   "post_tags",
     //   "post_categories"

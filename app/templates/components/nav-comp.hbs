@@ -12,7 +12,7 @@
     {{/link-to}}
   </li>
   <li>
-    {{#link-to "posts" (query-params page=1 categories="Stories")}}
+    {{#link-to "posts" (query-params page=1 categories="Stories") current-when=storyLike}}
       {{fa-icon "file"}}
       <span>Stories</span>
     {{/link-to}}
