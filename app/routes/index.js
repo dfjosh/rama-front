@@ -6,6 +6,6 @@ export default Route.extend({
   // Route Actions: actions: { willTransition(), didTransition() }
 
   beforeModel: function() {
-    this.transitionTo('projects');
+    this.transitionTo('posts');
   }
 });

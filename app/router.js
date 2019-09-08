@@ -12,8 +12,8 @@ Router.map(function() {
   // only nest routes if you want one template to render inside another (thru the outlet)
   this.route('posts');
   this.route('post', {path: 'posts/:slug'});
-  this.route('projects');
-  this.route('about');
+  this.route('projects', {path: 'code'});
+  this.route('about', {path: 'me'});
   this.route('admin', function() {
     this.route('taxonomies', function() {
       this.route('taxonomy', {path: ':taxonomy'}, function() {

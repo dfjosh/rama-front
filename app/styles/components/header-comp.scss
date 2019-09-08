@@ -98,7 +98,7 @@
     margin-top: 70px;
   }
 }
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1439px) { // -1px otherwise nav breaks
   .header-comp.science-fiction-shorts-header a,
   .header-comp.default-header a {
     height: 300px;

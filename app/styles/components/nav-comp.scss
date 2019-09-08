@@ -4,7 +4,7 @@
   top: -38px;
 }
 .nav-comp ul {
-  width: 400px; /* there's got to be a better way... */
+  width: 385px; /* there's got to be a better way... */
   margin: 0px auto;
   padding: 0px;
   list-style: none;
@@ -12,7 +12,7 @@
 }
 .nav-comp ul li {
   display: inline-block;
-  width: 100px; /* not sure why 33.3333% doesn't work */
+  // width: 80px; /* not sure why 33.3333% doesn't work */
 }
 .nav-comp ul li:hover {
   // background-color: #7e7e7e;
@@ -20,13 +20,16 @@
 }
 .nav-comp ul li a {
   display: block;
-  padding: 8px 12px;
+  padding: 8px 16px;
   color: #e8e8e8;
   text-align: center;
   text-shadow: -1px 1px 0px rgb(51, 51, 51);
   font-size: 16px;
   font-style: italic;
   font-weight: 900;
+}
+.nav-comp ul li a i {
+  display: none;
 }
 .nav-comp ul li a:link, 
 .nav-comp ul li a:visited, 
@@ -40,4 +43,41 @@
 }
 .nav-comp.lighter ul li a.active {
   background-color: #7e7e7e;
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-comp ul li a i {
+    display: inline;
+    margin-right: 4px;
+  }
+  .nav-comp ul {
+    width: 630px;
+  }
+  .nav-comp ul li {
+    width: 126px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  
+  .nav-comp {
+    position: relative;
+    top: -29px;
+  }
+  .nav-comp ul {
+    width: 250px;
+  }
+  .nav-comp ul li {
+    width: 50px;
+  }
+  .nav-comp ul li a {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  .nav-comp ul li a span {
+    display: none;
+  }
+  .nav-comp ul li a i {
+    display: inline;
+  }
 }
