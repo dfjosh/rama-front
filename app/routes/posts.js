@@ -7,19 +7,27 @@ export default Route.extend({
     },
     limit: {
       refreshModel: true
+    },
+    categories: {
+      refreshModel: true
     }
   },
   
   model(params) {
     let postParams = {}
-    postParams.filters = [
-      {
-        scope: 'not_categories',
-        args: ['Projects']
-      }
-    ]
     postParams.limit = params.limit;
     postParams.page = params.page;
+    Object.keys(params).forEach(key => {
+      if (!["limit", "page"].includes(key)) {
+        postParams.filters = [
+          {
+            scope: key,
+            args: [params[key]]
+          }
+        ];
+      }
+    });
+    console.log(params)
     // postParams.includes = [ // just decided to side load everything always after switching to AMS
     //   "post_tags",
     //   "post_categories"

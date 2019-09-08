@@ -1,8 +1,7 @@
 <ul>
   <li>
-    {{#link-to "posts" (query-params page=1) current-when=postLike}}
+    {{#link-to "posts" (query-params page=1 categories=null) current-when=postLike}}
       {{fa-icon "flash"}}
-      {{!-- {{fa-icon "heartbeat"}} --}}
       <span>Feed</span>
     {{/link-to}}
   </li>
@@ -13,7 +12,7 @@
     {{/link-to}}
   </li>
   <li>
-    {{#link-to "projects"}}
+    {{#link-to "posts" (query-params page=1 categories="Stories")}}
       {{fa-icon "file"}}
       <span>Stories</span>
     {{/link-to}}
