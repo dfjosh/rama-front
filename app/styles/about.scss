@@ -25,3 +25,9 @@ main.about {
     float: left;
   }
 }
+
+@media screen and (max-width: 768px) {
+  main.about .social-media {
+    width: 100%;
+  }
+}
