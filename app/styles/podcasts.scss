@@ -11,6 +11,8 @@ main.podcasts.container-fluid {
     position: relative;
     display: block;
     color: black;
+    float: left;
+    margin: 16px;
   }
   .podcast {
     .info {
@@ -35,6 +37,8 @@ main.podcasts.container-fluid {
 @media screen and (max-width: 866px) {
   .podcasts .podcast {
     width: 100%;
+    margin: 0px;
+    margin-bottom: 16px;
   }
 }
 
