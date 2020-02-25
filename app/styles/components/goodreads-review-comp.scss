@@ -5,6 +5,16 @@
   }
   p {
     font-size: 14px;
+    
+    .book-img {
+      float: left;
+      width: 60px;
+      margin: 4px 10px 5px 0px;
+      border-radius: 1px;
+    }
+  }
+  p.author i {
+    color: #666;
   }
   p.completed {
     text-align: right;
