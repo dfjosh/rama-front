@@ -1,0 +1,12 @@
+<hr>
+<h5><a href={{review.bookUrl}}>{{review.title}}</a></h5>
+<p class="author">
+  by <i>{{review.author}} ({{review.published}})</i>
+  <span class="rating">{{review.rating}}/5</span>
+</p>
+<p>
+  <img class="book-img" src={{review.imageUrl}}>
+  {{ellipsis review.body 400}}
+  <a href={{review.link}}>read more</a>
+</p>
+<p class="completed">{{formatted-date review.completed 'MMM DD, YYYY'}}</p>

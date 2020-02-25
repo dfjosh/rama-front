@@ -34,12 +34,19 @@
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
       <div class="row">
-        <div class="social-media col-sm-5">
+        <div class="col-sm-5 social-media">
           {{twitter-comp}}
         </div>
         <div class="col-sm-2"></div>
-        <div class="social-media col-sm-5">
-          {{goodreads-comp}}
+        <div class="col-sm-5 social-media goodreads-reviews">
+          {{!-- {{goodreads-comp}} --}}
+          <h3>
+            Goodreads
+            <small>by <a href="https://www.goodreads.com/user/show/56955322-joshua-wetenkamp">wetjosh</a></small>
+          </h3> 
+          {{#each goodreadsReviews as |review|}}
+            {{goodreads-review-comp review=review}}
+          {{/each}}
         </div>
       </div>
     </div>
