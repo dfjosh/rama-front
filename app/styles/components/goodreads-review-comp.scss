@@ -1,4 +1,7 @@
 .goodreads-reviews .goodreads-review-comp {
+  hr {
+    margin-top: 10px;
+  }
   h5 {
     font-size: 15px;
     font-weight: bold;
@@ -19,6 +22,7 @@
   p.completed {
     text-align: right;
     font-weight: bold;
+    color: #666;
   }
   span.rating {
     float: right;

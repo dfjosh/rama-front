@@ -39,7 +39,11 @@
         </div>
         <div class="col-sm-2"></div>
         <div class="col-sm-5 social-media goodreads-reviews">
-          {{goodreads-comp}}
+          {{!-- {{goodreads-comp}} --}}
+          <h3>
+            Goodreads
+            <small>by <a href="https://www.goodreads.com/user/show/56955322-joshua-wetenkamp">wetjosh</a></small>
+          </h3> 
           {{#each goodreadsReviews as |review|}}
             {{goodreads-review-comp review=review}}
           {{/each}}
