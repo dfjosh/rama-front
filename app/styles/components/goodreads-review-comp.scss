@@ -1,0 +1,16 @@
+.goodreads-reviews .goodreads-review-comp {
+  h5 {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 14px;
+  }
+  p.completed {
+    text-align: right;
+    font-weight: bold;
+  }
+  span.rating {
+    float: right;
+  }
+}

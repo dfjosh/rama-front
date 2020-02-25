@@ -1,0 +1,8 @@
+<h5>{{review.title}}</h5>
+<p>
+  by <i>{{review.author}} ({{review.published}})</i>
+  <span class="rating">{{review.rating}}/5</span>
+</p>
+<p>{{ellipsis review.body 400}}</p>
+<p class="completed">{{formatted-date review.completed 'MMM DD, YYYY'}}</p>
+<hr>
