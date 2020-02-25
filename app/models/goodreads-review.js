@@ -9,6 +9,6 @@ export default Model.extend({
   published: attr(), // '1992'
   rating: attr('number'),
   body: attr(),
-  completed: attr('date'), // date?
+  completed: attr('date'),
   link: attr()
 });
