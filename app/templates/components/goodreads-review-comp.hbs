@@ -2,9 +2,9 @@
 <h5><a href={{review.bookUrl}} target="_blank">{{review.title}}</a></h5>
 <p class="author">
   by <i>{{review.author}} ({{review.published}})</i>
-  <span class="rating">{{review.rating}}/5</span>
+  <span class="rating">{{star-rating-comp icon="star" rating=review.rating}}</span>
 </p>
-<p>
+<p class="body">
   <img class="book-img" src={{review.imageUrl}}>
   {{ellipsis review.body 400}}
   <a href={{review.link}} target="_blank">read more</a>
