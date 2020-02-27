@@ -7,10 +7,6 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'router-scroll', // 'auto'
     historySupportMiddleware: true,
-    contentSecurityPolicyHeader: 'Content-Security-Policy',
-    contentSecurityPolicy: {
-      'font-src': "'self' https://s3.amazonaws.com"
-    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
