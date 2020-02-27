@@ -8,6 +8,12 @@
   }
   p {
     font-size: 14px;
+  }
+  p.author i {
+    color: #666;
+  }
+  p.body {
+    min-height: 64px;
     
     .book-img {
       float: left;
@@ -15,9 +21,6 @@
       margin: 4px 10px 5px 0px;
       border-radius: 1px;
     }
-  }
-  p.author i {
-    color: #666;
   }
   p.completed {
     text-align: right;
