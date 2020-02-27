@@ -9,7 +9,7 @@ module.exports = function(environment) {
     historySupportMiddleware: true,
     contentSecurityPolicyHeader: 'Content-Security-Policy',
     contentSecurityPolicy: {
-      'font-src': "'self' https://lazy-rama.s3.amazonaws.com"
+      'font-src': "'self' https://s3.amazonaws.com"
     },
     EmberENV: {
       FEATURES: {
