@@ -8,7 +8,7 @@ module.exports = function(environment) {
     locationType: 'router-scroll', // 'auto'
     historySupportMiddleware: true,
     contentSecurityPolicy: {
-      'font-src': "'self'"
+      'font-src': "'self' https://www.distantfuturejosh.com"
     },
     EmberENV: {
       FEATURES: {
