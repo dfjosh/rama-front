@@ -7,6 +7,9 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'router-scroll', // 'auto'
     historySupportMiddleware: true,
+    contentSecurityPolicy: {
+      'font-src': "'self' https://lazy-rama.s3.amazonaws.com/rama-front"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
