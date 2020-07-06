@@ -35,6 +35,7 @@ let post = Model.extend({
   publishedAt: attr('date'),
 
   htmlBody: computed('body', function() {
+    if (!this.body) {return ""}
     let placeholder = /&cdnURL&/g;
     let body = this.body.replace(placeholder, ENV.cdnURL);
     return htmlSafe(body);

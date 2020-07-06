@@ -4,7 +4,7 @@ import { computed, observer } from '@ember/object';
 import { dasherize } from '@ember/string';
 import RSVP from 'rsvp';
 import $ from 'jquery';
-import moment from 'moment';
+// import moment from 'moment';
 import Post from 'rama-front/models/post';
 
 export default Component.extend({

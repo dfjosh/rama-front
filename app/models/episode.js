@@ -28,7 +28,10 @@ let episode = Model.extend({
 });
 
 episode.reopenClass({
-  EPISODE_TYPES: EPISODE_TYPES
+  EPISODE_TYPES: EPISODE_TYPES,
+  FULL: FULL,
+  TRAILER: TRAILER,
+  BOUNUS: BONUS
 });
 
 export default episode;
