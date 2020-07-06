@@ -50,18 +50,20 @@ export default Component.extend({
   actions: {
     selectPodcast(podcast) {
       this.model.set('podcast', podcast);
+
+      // set episode number automatically
+      this.model.set('number', this.model.podcast.get('nextEpisodeNumber'));
     },
     selectPost(post) {
       this.model.set('post', post);
       
-      // set Title, Summary, and Number automatically
+      // set Title and Summary automatically
       if (!this.model.title && post.title) {
         this.model.set('title', post.title);
       }
       if (!this.model.summary && post.body) {
         this.model.set('summary', post.body);
       }
-      
     },
     selectEpisodeType(episodeType) {
       this.model.set('episodeType', episodeType);

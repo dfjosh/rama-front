@@ -29,5 +29,15 @@ export default Model.extend({
   
   rssFeedLink: computed('slug', 'feed', function() {
     return `${ENV.cdnURL}/${this.slug}/${this.feed}`;
+  }),
+  
+  nextEpisodeNumber: computed('episodes', function() {
+    let episodes = this.get('episodes');
+    let numberOfEpisodes = episodes.length;
+    let maxEpisodeNumber = episodes.sortBy('number').lastObject.number;
+    if (numberOfEpisodes !== maxEpisodeNumber) {
+      alert(`number of episodes (${numberOfEpisodes}) is out of sync with max episode number (${maxEpisodeNumber})!`)
+    }
+    return maxEpisodeNumber + 1;
   })
 });
