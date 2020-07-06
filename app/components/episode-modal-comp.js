@@ -5,6 +5,7 @@ import $ from 'jquery';
 import Post from 'rama-front/models/post';
 import Episode from 'rama-front/models/episode';
 import Enclosure from 'rama-front/models/enclosure';
+import ENV from '../config/environment';
 
 export default Component.extend({
   classNames: ['post-modal-comp'],
@@ -20,9 +21,10 @@ export default Component.extend({
   
   init(refreshModel) {
     this._super(...arguments);
-
     if (this.model === undefined || refreshModel === true) {
-      this.set('model', this.store.createRecord('episode'));
+      this.set('model', this.store.createRecord('episode', {
+        episodeType: Episode.FULL
+      }));
       this.set('enclosure', this.store.createRecord('enclosure'));
     }
   },
@@ -41,15 +43,45 @@ export default Component.extend({
     });
   },
   
+  episodesFolder: computed('model.podcast', function() {
+    return `${ENV.cdnURL}/${this.model.podcast.get('slug')}/episodes/`
+  }),
+    
   actions: {
     selectPodcast(podcast) {
       this.model.set('podcast', podcast);
+
+      // set episode number automatically
+      this.model.set('number', this.model.podcast.get('nextEpisodeNumber'));
     },
     selectPost(post) {
       this.model.set('post', post);
+      
+      // set Title and Summary automatically
+      if (!this.model.title && post.title) {
+        this.model.set('title', post.title);
+      }
+      if (!this.model.summary && post.body) {
+        this.model.set('summary', post.body);
+      }
     },
     selectEpisodeType(episodeType) {
       this.model.set('episodeType', episodeType);
+    },
+    setEnclosureUrl(filename) {
+      this.enclosure.set('url', `${ENV.cdnURL}/${this.model.podcast.get('slug')}/episodes/${filename}`);
+      
+      // also set the mimeType automatically if possible
+      if (this.enclosure.mimeType === undefined && this.enclosure.computedMimeType !== null) {
+        this.enclosure.set('mimeType', this.enclosure.computedMimeType);
+      }
+      
+      // also get the length in bytes
+      this.enclosure.fetchSize.then(size => {
+        if (Number.isInteger(size) && this.enclosure.size === undefined) {
+          this.enclosure.set('size', size)
+        }
+      });
     },
     selectMimeType(mimeType) {
       this.enclosure.set('mimeType', mimeType);

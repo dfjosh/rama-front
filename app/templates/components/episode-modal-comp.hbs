@@ -99,7 +99,7 @@
           {{textarea class="form-control input-lg" value=model.summary rows="10" placeholder="iTunes summary"}}
         </div>
         <div class="form-group form-group-sm">
-          {{input class="form-control input-sm" value=enclosure.url type="text" placeholder="url relative to s3:/lazy-rama/"}}
+          {{input class="form-control input-sm" value=filename type="text" placeholder=(if model.podcast (concat "Filename relative to " episodesFolder) "Filename") focus-out=(action "setEnclosureUrl")  disabled=(if model.podcast false true)}}
         </div>
         <div class="form-group form-group-sm">
           {{input class="form-control input-sm" value=enclosure.size type="text" placeholder="bytes"}}
