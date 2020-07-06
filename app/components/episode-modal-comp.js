@@ -53,7 +53,15 @@ export default Component.extend({
     },
     selectPost(post) {
       this.model.set('post', post);
+      
       // set Title, Summary, and Number automatically
+      if (!this.model.title && post.title) {
+        this.model.set('title', post.title);
+      }
+      if (!this.model.summary && post.body) {
+        this.model.set('summary', post.body);
+      }
+      
     },
     selectEpisodeType(episodeType) {
       this.model.set('episodeType', episodeType);
