@@ -69,7 +69,7 @@ export default Component.extend({
       this.model.set('episodeType', episodeType);
     },
     setEnclosureUrl(filename) {
-      this.enclosure.set('url', `${ENV.cdnURL}/${this.model.podcast.get('slug')}/episodes/${filename}`);
+      this.enclosure.set('url', `${this.model.podcast.get('slug')}/episodes/${filename}`);
       
       // also set the mimeType automatically if possible
       if (this.enclosure.mimeType === undefined && this.enclosure.computedMimeType !== null) {
