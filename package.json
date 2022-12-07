@@ -29,7 +29,7 @@
     "ember-cli-bootstrap-sassy": "^0.5.8",
     "ember-cli-dependency-checker": "^3.0.0",
     "ember-cli-deploy": "^1.0.2",
-    "ember-cli-deploy-lightning-pack": "^1.2.2",
+    "ember-cli-deploy-lightning-pack": "^5.0.0",
     "ember-cli-eslint": "^4.2.3",
     "ember-cli-htmlbars": "^3.0.0",
     "ember-cli-htmlbars-inline-precompile": "^1.0.3",
